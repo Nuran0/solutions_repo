@@ -172,9 +172,79 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<p>GhipBaku
-ChipBaku
-BAku</p>
+<h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</h1>
+<h2 id="task-1-theoretical-foundation">Task 1: Theoretical Foundation</h2>
+<h3 id="objective">Objective:</h3>
+<p>To derive the governing equations of projectile motion from first principles and understand how variations in initial conditions lead to a family of solutions.</p>
+<hr/>
+<h3 id="fundamental-principles">Fundamental Principles</h3>
+<p>We begin with <strong>Newton’s Second Law of Motion</strong> applied to two-dimensional projectile motion under gravity:</p>
+<ul>
+<li>The only force acting on the object (ignoring air resistance) is gravity.</li>
+<li>Acceleration due to gravity is constant and acts downward with magnitude <span class="arithmatex">\(g\)</span>.</li>
+</ul>
+<p>Let the object be projected with an initial velocity <span class="arithmatex">\(v_0\)</span> at an angle <span class="arithmatex">\(\theta\)</span> to the horizontal.</p>
+<hr/>
+<h3 id="equations-of-motion">Equations of Motion</h3>
+<p>We split the motion into <strong>horizontal (x)</strong> and <strong>vertical (y)</strong> components.</p>
+<ul>
+<li>Horizontal acceleration: <span class="arithmatex">\(a_x = 0\)</span></li>
+<li>Vertical acceleration: <span class="arithmatex">\(a_y = -g\)</span></li>
+</ul>
+<p>Initial velocity components:
+- <span class="arithmatex">\(v_{0x} = v_0 \cos(\theta)\)</span>
+- <span class="arithmatex">\(v_{0y} = v_0 \sin(\theta)\)</span></p>
+<p>Using basic kinematic equations:</p>
+<h4 id="horizontal-motion">Horizontal Motion:</h4>
+<div class="arithmatex">\[
+x(t) = v_0 \cos(\theta) \cdot t
+\]</div>
+<h4 id="vertical-motion">Vertical Motion:</h4>
+<div class="arithmatex">\[
+y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2
+\]</div>
+<hr/>
+<h3 id="time-of-flight">Time of Flight</h3>
+<p>The projectile returns to the same vertical level when <span class="arithmatex">\(y(t) = 0\)</span> (assuming it lands at the same height it was launched):</p>
+<div class="arithmatex">\[
+0 = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2
+\]</div>
+<p>Factor out <span class="arithmatex">\(t\)</span>:
+$$
+t \left( v_0 \sin(\theta) - \frac{1}{2} g t \right) = 0
+$$</p>
+<p>Ignoring the trivial solution <span class="arithmatex">\(t = 0\)</span>, we get:
+$$
+t = \frac{2 v_0 \sin(\theta)}{g}
+$$</p>
+<hr/>
+<h3 id="range-of-the-projectile">Range of the Projectile</h3>
+<p>To find the horizontal <strong>range <span class="arithmatex">\(R\)</span></strong>, substitute the total time of flight into <span class="arithmatex">\(x(t)\)</span>:</p>
+<div class="arithmatex">\[
+R = v_0 \cos(\theta) \cdot \frac{2 v_0 \sin(\theta)}{g}
+\]</div>
+<p>Using the identity <span class="arithmatex">\(\sin(2\theta) = 2 \sin(\theta) \cos(\theta)\)</span>:</p>
+<div class="arithmatex">\[
+R(\theta) = \frac{v_0^2 \sin(2\theta)}{g}
+\]</div>
+<hr/>
+<h3 id="family-of-solutions">Family of Solutions</h3>
+<p>The above equation defines a <strong>family of parabolic trajectories</strong>, each determined by a specific launch angle <span class="arithmatex">\(\theta\)</span> and initial velocity <span class="arithmatex">\(v_0\)</span>. For a fixed <span class="arithmatex">\(v_0\)</span>:</p>
+<ul>
+<li>As <span class="arithmatex">\(\theta\)</span> varies, so does the range <span class="arithmatex">\(R(\theta)\)</span>.</li>
+<li>Maximum range occurs at <span class="arithmatex">\(\theta = 45^\circ\)</span>, where <span class="arithmatex">\(\sin(2\theta) = 1\)</span>.</li>
+<li>Pairs of angles <span class="arithmatex">\((\theta, 90^\circ - \theta)\)</span> give the same range due to the symmetry of the sine function.</li>
+</ul>
+<hr/>
+<h3 id="summary-of-governing-equations">Summary of Governing Equations:</h3>
+<ul>
+<li><strong>Horizontal motion</strong>: <span class="arithmatex">\(x(t) = v_0 \cos(\theta) \cdot t\)</span></li>
+<li><strong>Vertical motion</strong>: <span class="arithmatex">\(y(t) = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2\)</span></li>
+<li><strong>Time of flight</strong>: <span class="arithmatex">\(T = \frac{2 v_0 \sin(\theta)}{g}\)</span></li>
+<li><strong>Range</strong>: <span class="arithmatex">\(R(\theta) = \frac{v_0^2 \sin(2\theta)}{g}\)</span></li>
+</ul>
+<hr/>
+<p>In the next task, we will simulate these trajectories using Python to visualize how the range changes with angle <span class="arithmatex">\(\theta\)</span>.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
