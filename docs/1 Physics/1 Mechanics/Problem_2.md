@@ -327,3 +327,114 @@ $$
 | Human Gait                  | Leg swing under muscle forcing              | Periodic forcing, stability    |
 | Climate Systems             | Feedback + external driving                 | Chaos, bifurcations            |
 
+
+
+#  Task 4: Implementation and Visualization
+
+###  Objective:
+To simulate the **forced damped pendulum** using numerical methods and visualize:
+
+- Time evolution
+- Phase portraits
+- Poincaré sections
+
+...to study how **damping**, **driving force**, and **initial conditions** affect transitions to **chaos**.
+
+---
+
+##  Differential Equation
+
+The nonlinear forced damped pendulum is governed by:
+
+$$
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin(\theta) = A \cos(\omega t)
+$$
+
+Converted to first-order ODEs:
+
+$$
+\frac{d\theta}{dt} = \omega_\theta \\
+\frac{d\omega_\theta}{dt} = -b \omega_\theta - \frac{g}{L} \sin(\theta) + A \cos(\omega t)
+$$
+
+---
+
+##  Python Code: Simulation & Visualization
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+# Parameters
+g = 9.8
+L = 1.0
+
+def pendulum(t, y, b, A, omega_drive):
+    theta, omega_theta = y
+    dtheta_dt = omega_theta
+    domega_dt = -b * omega_theta - (g / L) * np.sin(theta) + A * np.cos(omega_drive * t)
+    return [dtheta_dt, domega_dt]
+
+# Simulation function
+def simulate(b, A, omega_drive, y0, t_max=200, t_points=10000):
+    t_eval = np.linspace(0, t_max, t_points)
+    sol = solve_ivp(pendulum, (0, t_max), y0, t_eval=t_eval, args=(b, A, omega_drive), rtol=1e-9, atol=1e-9)
+    return sol.t, sol.y[0], sol.y[1]
+
+# Poincaré section sampling
+def poincare_section(t, theta, omega_theta, omega_drive):
+    T_drive = 2 * np.pi / omega_drive
+    poincare_times = np.arange(0, t[-1], T_drive)
+    indices = [np.abs(t - pt).argmin() for pt in poincare_times]
+    return theta[indices], omega_theta[indices]
+
+# Parameters (chaotic regime)
+b = 0.2
+A = 1.2
+omega_drive = 0.667
+y0 = [0.2, 0.0]  # initial conditions
+
+# Run simulation
+t, theta, omega_theta = simulate(b, A, omega_drive, y0)
+
+# Wrap theta to [-pi, pi] for clarity
+theta_wrapped = (theta + np.pi) % (2 * np.pi) - np.pi
+
+# Plot time evolution
+plt.figure(figsize=(10, 4))
+plt.plot(t, theta_wrapped)
+plt.title("Time Evolution of θ(t)")
+plt.xlabel("Time (s)")
+plt.ylabel("θ (rad)")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+![alt text](image-3.png)
+
+# Phase space plot
+plt.figure(figsize=(6, 6))
+plt.plot(theta_wrapped, omega_theta, linewidth=0.5)
+plt.title("Phase Portrait")
+plt.xlabel("θ (rad)")
+plt.ylabel("ω (rad/s)")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+![alt text](image-4.png)
+
+
+# Poincaré section
+theta_p, omega_p = poincare_section(t, theta_wrapped, omega_theta, omega_drive)
+plt.figure(figsize=(6, 6))
+plt.scatter(theta_p, omega_p, s=2)
+plt.title("Poincaré Section")
+plt.xlabel("θ (rad)")
+plt.ylabel("ω (rad/s)")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+![alt text](image-5.png)
