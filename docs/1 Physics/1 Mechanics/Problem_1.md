@@ -352,7 +352,7 @@ def simulate_projectile_ranges(v0_list, g_list):
     plt.grid(True)
     plt.tight_layout()
     plt.show()
-```
+    ```
     ![alt text](image-1.png)
 
 # Example usage
