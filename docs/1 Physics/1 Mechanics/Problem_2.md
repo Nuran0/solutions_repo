@@ -128,11 +128,88 @@ Resonance implies **maximum energy transfer** from the driver to the pendulum.
 
 ---
 
-##  Summary
+#  Task 2: Analysis of Dynamics
 
-- The forced damped pendulum becomes a **linear ODE** under small-angle approximation.
-- The system exhibits **resonance** at a specific driving frequency.
-- The amplitude and phase of oscillation depend on the balance between **restoring**, **damping**, and **driving** forces.
-- Resonance leads to **large amplitudes and high energy**, which must be managed in engineering systems.
+###  Objective:
+To investigate how the **damping coefficient ($b$)**, **driving amplitude ($A$)**, and **driving frequency ($\omega$)** influence the motion of a **forced damped pendulum**, and to examine the transition from **regular** to **chaotic** motion.
 
-In Task 2, we will simulate the system numerically using Python and visualize how amplitude varies with driving frequency — including resonance and damping effects.
+---
+
+##  System Equation
+
+We work with the full nonlinear second-order ODE:
+
+$$
+\frac{d^2\theta}{dt^2} + b\frac{d\theta}{dt} + \frac{g}{L} \sin(\theta) = A \cos(\omega t)
+$$
+
+Let:
+- $g = 9.8$
+- $L = 1.0$
+- The state vector:  
+  $$
+  \begin{cases}
+  \theta_1 = \theta \\
+  \theta_2 = \frac{d\theta}{dt}
+  \end{cases}
+  $$
+
+Then we convert it into a system of first-order ODEs:
+
+$$
+\frac{d\theta_1}{dt} = \theta_2 \\
+\frac{d\theta_2}{dt} = -b \theta_2 - \frac{g}{L} \sin(\theta_1) + A \cos(\omega t)
+$$
+
+---
+
+##  Python Simulation (Runge-Kutta)
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+# Pendulum parameters
+g = 9.8
+L = 1.0
+
+def forced_damped_pendulum(t, y, b, A, omega):
+    theta, omega_theta = y
+    dtheta_dt = omega_theta
+    domega_dt = -b * omega_theta - (g / L) * np.sin(theta) + A * np.cos(omega * t)
+    return [dtheta_dt, domega_dt]
+
+def simulate_pendulum(b, A, omega, t_max=50, y0=[0.1, 0.0]):
+    t_span = (0, t_max)
+    t_eval = np.linspace(*t_span, 5000)
+    sol = solve_ivp(forced_damped_pendulum, t_span, y0, t_eval=t_eval, args=(b, A, omega))
+    
+    return sol.t, sol.y[0]
+
+def plot_pendulum(t, theta, label):
+    plt.plot(t, theta, label=label)
+
+# Parameter sets to analyze
+params = [
+    (0.2, 1.2, 0.5),
+    (0.2, 1.2, 0.667),
+    (0.2, 1.2, 0.75),
+    (0.2, 1.2, 0.8),
+    (0.2, 1.2, 0.9),
+]
+
+plt.figure(figsize=(12, 6))
+for b, A, omega in params:
+    t, theta = simulate_pendulum(b, A, omega)
+    plot_pendulum(t, theta, f"ω = {omega}")
+
+plt.title("Pendulum Motion for Varying Driving Frequencies (b=0.2, A=1.2)")
+plt.xlabel("Time (s)")
+plt.ylabel("Angle θ (rad)")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+![alt text](image-2.png)
