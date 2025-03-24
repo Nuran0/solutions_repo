@@ -165,7 +165,8 @@ plt.title(f'Range vs Angle for Different Gravity (v₀ = {v0_fixed} m/s)')
 plt.legend()
 plt.grid(True)
 plt.show()
-
+```
+![alt text](image.png)
 
 #  Task 3: Practical Applications
 
