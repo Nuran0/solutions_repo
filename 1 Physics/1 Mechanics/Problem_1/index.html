@@ -293,6 +293,135 @@ plt.title(f'Range vs Angle for Different Gravity (v₀ = {v0_fixed} m/s)')
 plt.legend()
 plt.grid(True)
 plt.show()</p>
+<h1 id="task-3-practical-applications">Task 3: Practical Applications</h1>
+<h3 id="objective_2">Objective:</h3>
+<p>To explore how the ideal projectile motion model can be adapted for <strong>real-world situations</strong>, including <strong>uneven terrain</strong> and the presence of <strong>air resistance</strong>.</p>
+<hr/>
+<h3 id="revisiting-the-ideal-model">Revisiting the Ideal Model</h3>
+<p>The basic model we previously used assumed:
+- No air resistance.
+- Flat, level ground.
+- Constant gravitational acceleration.
+- Point-mass projectile.</p>
+<p>However, real-world conditions often violate these assumptions. To make our model more applicable, we need to introduce more complexity step by step.</p>
+<hr/>
+<h3 id="1-uneven-terrain">1. Uneven Terrain</h3>
+<h4 id="scenario">Scenario:</h4>
+<ul>
+<li>The projectile is launched from or lands on a hill, slope, or building.</li>
+<li>Launch and landing heights are different: <span class="arithmatex">\(y_0 \neq 0\)</span>.</li>
+</ul>
+<h4 id="modified-equation-for-range">Modified Equation for Range:</h4>
+<p>If the landing height is different, we must solve for the time <span class="arithmatex">\(t\)</span> when <span class="arithmatex">\(y(t) = y_{\text{final}}\)</span>, then compute:</p>
+<div class="arithmatex">\[
+R = x(t) = v_0 \cos(\theta) \cdot t
+\]</div>
+<p>This requires solving the quadratic:</p>
+<div class="arithmatex">\[
+y_{\text{final}} = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2 + y_0
+\]</div>
+<p>Which has the form:</p>
+<div class="arithmatex">\[
+\frac{1}{2} g t^2 - v_0 \sin(\theta) \cdot t + (y_0 - y_{\text{final}}) = 0
+\]</div>
+<p>The physically meaningful root is then used to compute the range.</p>
+<hr/>
+<h3 id="2-air-resistance-drag">2. Air Resistance (Drag)</h3>
+<p>Air resistance exerts a force opposite to the direction of motion. It depends on:</p>
+<ul>
+<li>Velocity magnitude (<span class="arithmatex">\(v\)</span>)</li>
+<li>Cross-sectional area (<span class="arithmatex">\(A\)</span>)</li>
+<li>Air density (<span class="arithmatex">\(\rho\)</span>)</li>
+<li>Drag coefficient (<span class="arithmatex">\(C_d\)</span>)</li>
+</ul>
+<h4 id="drag-force">Drag Force:</h4>
+<div class="arithmatex">\[
+F_{\text{drag}} = \frac{1}{2} C_d \rho A v^2
+\]</div>
+<p>This makes the motion <strong>nonlinear</strong>, requiring numerical solutions (e.g., with Euler or Runge-Kutta methods).</p>
+<h4 id="equations-of-motion-with-drag">Equations of Motion with Drag:</h4>
+<ul>
+<li>
+<p>Horizontal:
+  $$
+  m \frac{dv_x}{dt} = - \frac{1}{2} C_d \rho A v v_x
+  $$</p>
+</li>
+<li>
+<p>Vertical:
+  $$
+  m \frac{dv_y}{dt} = -mg - \frac{1}{2} C_d \rho A v v_y
+  $$</p>
+</li>
+</ul>
+<p>Where <span class="arithmatex">\(v = \sqrt{v_x^2 + v_y^2}\)</span> is the total speed.</p>
+<p>This system is typically solved using computational tools like Python's <code>scipy.integrate.solve_ivp</code>.</p>
+<hr/>
+<h3 id="other-adaptations">Other Adaptations</h3>
+<h4 id="wind">Wind:</h4>
+<ul>
+<li>Introduces a <strong>horizontal acceleration</strong> or drift term.</li>
+<li>Can be modeled by adjusting <span class="arithmatex">\(v_x\)</span> with wind speed or adding a force term.</li>
+</ul>
+<h4 id="rotating-earth-coriolis-effect">Rotating Earth (Coriolis Effect):</h4>
+<ul>
+<li>Important in <strong>long-range artillery or missile trajectories</strong>.</li>
+<li>Causes slight horizontal deviation due to Earth's rotation.</li>
+</ul>
+<h4 id="varying-gravity">Varying Gravity:</h4>
+<ul>
+<li>Gravity <span class="arithmatex">\(g\)</span> decreases with altitude or varies on different planets.</li>
+<li>For high-altitude motion, <span class="arithmatex">\(g\)</span> is a function of height:<br/>
+  $$
+  g(h) = \frac{G M}{(R + h)^2}
+  $$</li>
+</ul>
+<hr/>
+<h3 id="insights">Insights</h3>
+<p>Real-world motion is much more complex, but understanding the <strong>ideal case</strong> gives a solid foundation for building more advanced models. Engineers, physicists, and simulation experts often:</p>
+<ul>
+<li>Start with the basic model.</li>
+<li>Add one layer of complexity at a time.</li>
+<li>Use simulations and empirical data to refine the predictions.</li>
+</ul>
+<hr/>
+<h3 id="summary">✅ Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Included in Ideal Model</th>
+<th>Included in Realistic Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Level Ground</td>
+<td>✅</td>
+<td>❌ (may vary)</td>
+</tr>
+<tr>
+<td>Air Resistance</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Wind Effects</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Varying Gravity</td>
+<td>❌</td>
+<td>✅ (e.g., for high altitudes)</td>
+</tr>
+<tr>
+<td>Uneven Terrain</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
