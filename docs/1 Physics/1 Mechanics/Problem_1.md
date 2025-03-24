@@ -98,5 +98,72 @@ The above equation defines a **family of parabolic trajectories**, each determin
 
 ---
 
-In the next task, we will simulate these trajectories using Python to visualize how the range changes with angle $\theta$.
+#  Task 2: Analysis of the Range
+
+###  Objective:
+To investigate how the **horizontal range** of a projectile depends on the **angle of projection** and how variations in **initial velocity** ($v_0$) and **gravitational acceleration** ($g$) influence this relationship.
+
+---
+
+###  Recap: Range Equation
+
+From Task 1, we derived the horizontal range of a projectile as:
+
+$$
+R(\theta) = \frac{v_0^2 \sin(2\theta)}{g}
+$$
+
+This formula clearly shows that the range:
+- Depends on $\sin(2\theta)$, which peaks at $2\theta = 90^\circ$ → $\theta = 45^\circ$.
+- Is directly proportional to the square of the initial velocity $v_0$.
+- Is inversely proportional to gravitational acceleration $g$.
+
+---
+
+###  Python Simulation
+
+Below is a Python script to visualize how the range varies with projection angle for different values of $v_0$ and $g$.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def compute_range(theta_deg, v0, g):
+    theta_rad = np.radians(theta_deg)
+    return (v0 ** 2) * np.sin(2 * theta_rad) / g
+
+angles = np.linspace(0, 90, 500)
+
+# Parameters for comparison
+v0_values = [10, 20, 30]
+g_values = [9.8, 1.6, 24.8]  # Earth, Moon, Jupiter
+
+plt.figure(figsize=(10, 6))
+
+# Plot for different initial velocities on Earth
+for v0 in v0_values:
+    ranges = compute_range(angles, v0, 9.8)
+    plt.plot(angles, ranges, label=f'v₀ = {v0} m/s (g = 9.8 m/s²)')
+
+plt.xlabel('Angle of Projection (degrees)')
+plt.ylabel('Range (meters)')
+plt.title('Range vs Angle for Different Initial Velocities (g = 9.8)')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# Plot for different gravity environments (fixed v0)
+plt.figure(figsize=(10, 6))
+v0_fixed = 20
+for g in g_values:
+    ranges = compute_range(angles, v0_fixed, g)
+    plt.plot(angles, ranges, label=f'g = {g} m/s²')
+
+plt.xlabel('Angle of Projection (degrees)')
+plt.ylabel('Range (meters)')
+plt.title(f'Range vs Angle for Different Gravity (v₀ = {v0_fixed} m/s)')
+plt.legend()
+plt.grid(True)
+plt.show()
+
 
