@@ -291,3 +291,72 @@ Real-world motion is much more complex, but understanding the **ideal case** giv
 | Varying Gravity     | ❌                       | ✅ (e.g., for high altitudes)|
 | Uneven Terrain      | ❌                       | ✅                           |
 
+
+#  Task 4: Implementation
+
+###  Objective:
+To implement a **computational tool** that simulates projectile motion and visualizes how the **range** varies with the **angle of projection** under different **initial conditions**.
+
+---
+
+##  Core Formula Recap
+
+We use the ideal projectile range formula:
+
+$$
+R(\theta) = \frac{v_0^2 \sin(2\theta)}{g}
+$$
+
+This relationship allows us to:
+- Simulate range versus angle.
+- Vary $v_0$ and $g$ to study effects of different launch speeds and environments.
+
+---
+
+##  Python Implementation
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def compute_range(theta_deg, v0, g):
+    theta_rad = np.radians(theta_deg)
+    return (v0 ** 2) * np.sin(2 * theta_rad) / g
+
+def simulate_projectile_ranges(v0_list, g_list):
+    angles = np.linspace(0, 90, 500)
+
+    # Plot for varying initial velocities (fixed gravity)
+    plt.figure(figsize=(10, 6))
+    for v0 in v0_list:
+        ranges = compute_range(angles, v0, 9.8)
+        plt.plot(angles, ranges, label=f'v₀ = {v0} m/s')
+    plt.title("Range vs Angle (Varying v₀, Fixed g = 9.8 m/s²)")
+    plt.xlabel("Angle of Projection (degrees)")
+    plt.ylabel("Range (meters)")
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+
+    # Plot for varying gravity (fixed v0)
+    plt.figure(figsize=(10, 6))
+    v0_fixed = v0_list[len(v0_list)//2]
+    for g in g_list:
+        ranges = compute_range(angles, v0_fixed, g)
+        plt.plot(angles, ranges, label=f'g = {g} m/s²')
+    plt.title(f"Range vs Angle (Fixed v₀ = {v0_fixed} m/s, Varying g)")
+    plt.xlabel("Angle of Projection (degrees)")
+    plt.ylabel("Range (meters)")
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.show()
+```
+    ![alt text](image-1.png)
+
+# Example usage
+v0_values = [10, 20, 30]           # different initial velocities
+g_values = [9.8, 1.6, 24.8]        # Earth, Moon, Jupiter
+
+simulate_projectile_ranges(v0_values, g_values)
