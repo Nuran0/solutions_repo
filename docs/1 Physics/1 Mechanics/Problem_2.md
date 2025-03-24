@@ -414,6 +414,7 @@ plt.show()
 ![alt text](image-3.png)
 
 # Phase space plot
+```
 plt.figure(figsize=(6, 6))
 plt.plot(theta_wrapped, omega_theta, linewidth=0.5)
 plt.title("Phase Portrait")
@@ -427,6 +428,7 @@ plt.show()
 
 
 # Poincaré section
+```
 theta_p, omega_p = poincare_section(t, theta_wrapped, omega_theta, omega_drive)
 plt.figure(figsize=(6, 6))
 plt.scatter(theta_p, omega_p, s=2)
