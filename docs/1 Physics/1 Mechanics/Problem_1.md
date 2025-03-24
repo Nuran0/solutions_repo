@@ -167,3 +167,126 @@ plt.grid(True)
 plt.show()
 
 
+#  Task 3: Practical Applications
+
+###  Objective:
+To explore how the ideal projectile motion model can be adapted for **real-world situations**, including **uneven terrain** and the presence of **air resistance**.
+
+---
+
+###  Revisiting the Ideal Model
+
+The basic model we previously used assumed:
+- No air resistance.
+- Flat, level ground.
+- Constant gravitational acceleration.
+- Point-mass projectile.
+
+However, real-world conditions often violate these assumptions. To make our model more applicable, we need to introduce more complexity step by step.
+
+---
+
+###  1. Uneven Terrain
+
+#### Scenario:
+- The projectile is launched from or lands on a hill, slope, or building.
+- Launch and landing heights are different: $y_0 \neq 0$.
+
+#### Modified Equation for Range:
+
+If the landing height is different, we must solve for the time $t$ when $y(t) = y_{\text{final}}$, then compute:
+
+$$
+R = x(t) = v_0 \cos(\theta) \cdot t
+$$
+
+This requires solving the quadratic:
+
+$$
+y_{\text{final}} = v_0 \sin(\theta) \cdot t - \frac{1}{2} g t^2 + y_0
+$$
+
+Which has the form:
+
+$$
+\frac{1}{2} g t^2 - v_0 \sin(\theta) \cdot t + (y_0 - y_{\text{final}}) = 0
+$$
+
+The physically meaningful root is then used to compute the range.
+
+---
+
+###  2. Air Resistance (Drag)
+
+Air resistance exerts a force opposite to the direction of motion. It depends on:
+
+- Velocity magnitude ($v$)
+- Cross-sectional area ($A$)
+- Air density ($\rho$)
+- Drag coefficient ($C_d$)
+
+#### Drag Force:
+
+$$
+F_{\text{drag}} = \frac{1}{2} C_d \rho A v^2
+$$
+
+This makes the motion **nonlinear**, requiring numerical solutions (e.g., with Euler or Runge-Kutta methods).
+
+#### Equations of Motion with Drag:
+
+- Horizontal:
+  $$
+  m \frac{dv_x}{dt} = - \frac{1}{2} C_d \rho A v v_x
+  $$
+
+- Vertical:
+  $$
+  m \frac{dv_y}{dt} = -mg - \frac{1}{2} C_d \rho A v v_y
+  $$
+
+Where $v = \sqrt{v_x^2 + v_y^2}$ is the total speed.
+
+This system is typically solved using computational tools like Python's `scipy.integrate.solve_ivp`.
+
+---
+
+###  Other Adaptations
+
+#### Wind:
+- Introduces a **horizontal acceleration** or drift term.
+- Can be modeled by adjusting $v_x$ with wind speed or adding a force term.
+
+#### Rotating Earth (Coriolis Effect):
+- Important in **long-range artillery or missile trajectories**.
+- Causes slight horizontal deviation due to Earth's rotation.
+
+#### Varying Gravity:
+- Gravity $g$ decreases with altitude or varies on different planets.
+- For high-altitude motion, $g$ is a function of height:  
+  $$
+  g(h) = \frac{G M}{(R + h)^2}
+  $$
+
+---
+
+###  Insights
+
+Real-world motion is much more complex, but understanding the **ideal case** gives a solid foundation for building more advanced models. Engineers, physicists, and simulation experts often:
+
+- Start with the basic model.
+- Add one layer of complexity at a time.
+- Use simulations and empirical data to refine the predictions.
+
+---
+
+### ✅ Summary
+
+| Factor              | Included in Ideal Model | Included in Realistic Model |
+|---------------------|--------------------------|------------------------------|
+| Level Ground        | ✅                       | ❌ (may vary)                |
+| Air Resistance      | ❌                       | ✅                           |
+| Wind Effects        | ❌                       | ✅                           |
+| Varying Gravity     | ❌                       | ✅ (e.g., for high altitudes)|
+| Uneven Terrain      | ❌                       | ✅                           |
+
