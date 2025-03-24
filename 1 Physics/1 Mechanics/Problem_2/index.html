@@ -518,19 +518,18 @@ plt.show()
 </code></pre>
 <p><img alt="alt text" src="../image-3.png"/></p>
 <h1 id="phase-space-plot">Phase space plot</h1>
-<p>plt.figure(figsize=(6, 6))
+<pre><code>plt.figure(figsize=(6, 6))
 plt.plot(theta_wrapped, omega_theta, linewidth=0.5)
 plt.title("Phase Portrait")
 plt.xlabel("θ (rad)")
 plt.ylabel("ω (rad/s)")
 plt.grid(True)
 plt.tight_layout()
-plt.show()</p>
-<pre><code>![alt text](image-4.png)
-
-
-# Poincaré section
-theta_p, omega_p = poincare_section(t, theta_wrapped, omega_theta, omega_drive)
+plt.show()
+</code></pre>
+<p><img alt="alt text" src="../image-4.png"/></p>
+<h1 id="poincare-section">Poincaré section</h1>
+<pre><code>theta_p, omega_p = poincare_section(t, theta_wrapped, omega_theta, omega_drive)
 plt.figure(figsize=(6, 6))
 plt.scatter(theta_p, omega_p, s=2)
 plt.title("Poincaré Section")
