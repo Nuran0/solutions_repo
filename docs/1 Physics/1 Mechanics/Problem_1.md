@@ -291,9 +291,9 @@ def simulate_projectile_ranges(v0_list, g_list):
     plt.grid(True)
     plt.tight_layout()
     plt.show()
+    ```
 
-    # Plot for varying gravity (fixed v0)
-    
+    ```
     plt.figure(figsize=(10, 6))
     v0_fixed = v0_list[len(v0_list)//2]
     for g in g_list:
@@ -306,7 +306,6 @@ def simulate_projectile_ranges(v0_list, g_list):
     plt.grid(True)
     plt.tight_layout()
     plt.show()
-    
     ```
 
     ![alt text](image-1.png)
