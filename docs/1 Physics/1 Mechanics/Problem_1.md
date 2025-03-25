@@ -308,7 +308,7 @@ def simulate_projectile_ranges(v0_list, g_list):
     plt.show()
     ```
     ![alt text](image-1.png)
-
+```
 # Example usage
 v0_values = [10, 20, 30]           # different initial velocities
 g_values = [9.8, 1.6, 24.8]        # Earth, Moon, Jupiter
