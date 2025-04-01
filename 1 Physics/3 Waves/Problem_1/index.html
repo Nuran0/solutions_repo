@@ -191,7 +191,40 @@ X, Y = np.meshgrid(x, y)       # Create mesh grid</p>
 <h1 id="compute-the-wave-displacement-x-y-t-at-each-point-for-time-0">Compute the wave displacement η(x, y, t) at each point for time = 0</h1>
 <p>eta = (A / np.sqrt(r)) * np.cos(k * r - omega * t + phi)</p>
 <p><img alt="alt text" src="../image-5.png"/></p>
-<p>Wave Function: We calculate the wave displacement 
+<p>Explanation of the Code:
+Constants:</p>
+<p>Amplitude 
+𝐴
+A, Wavelength 
+𝜆
+λ, Wave number 
+𝑘
+k, Angular frequency 
+𝜔
+ω, and Phase constant 
+𝜙
+ϕ are all set at the beginning.</p>
+<p>The source location is set at 
+(
+𝑥
+0
+,
+𝑦
+0
+)
+(x 
+0
+​
+ ,y 
+0
+​
+ ), and the frequency is 
+𝑓
+=
+1
+f=1 Hz.</p>
+<p>Grid Creation:</p>
+<p>We create a grid of points on the water surface using np.meshgrid to calculate the displacement 
 𝜂
 (
 𝑥
@@ -200,7 +233,18 @@ X, Y = np.meshgrid(x, y)       # Create mesh grid</p>
 ,
 𝑡
 )
-η(x,y,t) for each time step using the formula:</p>
+η(x,y,t) at each grid point.</p>
+<p>Wave Displacement Calculation:</p>
+<p>The displacement 
+𝜂
+(
+𝑥
+,
+𝑦
+,
+𝑡
+)
+η(x,y,t) at each point is calculated using the formula:</p>
 <p>𝜂
 (
 𝑥
@@ -229,7 +273,12 @@ r
 ​</p>
 <p>A
 ​
- ⋅cos(kr−ωt+ϕ)</p>
+ ⋅cos(kr−ωt+ϕ)
+Where 
+𝑟
+r is the distance from the source to each point.</p>
+<p>Plotting:</p>
+<p>The contour plot visually represents the wave displacement, where the color map indicates the displacement values, with brighter areas corresponding to larger displacements (crests) and darker areas corresponding to smaller displacements (troughs).</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
