@@ -250,6 +250,40 @@ v &gt; \sqrt{\frac{2GM}{r}}
 <p>To better visualize the differences in these trajectories, we can plot the paths of the object depending on its initial velocity. Let's simulate and plot these trajectories for a payload released near Earth.</p>
 <h4 id="python-code-for-trajectory-simulation">Python Code for Trajectory Simulation:</h4>
 <p><img alt="alt text" src="../image-2.png"/></p>
+<h1 id="_1"></h1>
+<h2 id="numerical-analysis-of-the-path-of-a-payload-based-on-initial-conditions">Numerical Analysis of the Path of a Payload Based on Initial Conditions</h2>
+<p>In this task, we will perform a numerical analysis to compute the path of a payload released near Earth based on given initial conditions, such as position, velocity, and altitude. We will use numerical integration techniques to simulate the trajectory of the object under the influence of Earth's gravity.</p>
+<h3 id="1-equations-of-motion">1. <strong>Equations of Motion</strong></h3>
+<p>The motion of the payload can be described using Newton’s law of gravitation and the equations of motion. The acceleration due to gravity at a distance <span class="arithmatex">\(r\)</span> from the center of Earth is given by:</p>
+<div class="arithmatex">\[
+a(r) = -\frac{G M}{r^2}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(a(r)\)</span> is the gravitational acceleration,
+- <span class="arithmatex">\(G\)</span> is the gravitational constant (<span class="arithmatex">\(6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}\)</span>),
+- <span class="arithmatex">\(M\)</span> is the mass of Earth (<span class="arithmatex">\(5.972 \times 10^{24} \, \text{kg}\)</span>),
+- <span class="arithmatex">\(r\)</span> is the distance from the center of Earth.</p>
+<p>Using Newton’s second law, the velocity and position of the payload can be updated using numerical integration.</p>
+<p>The velocity update equation is:</p>
+<div class="arithmatex">\[
+v(t+\Delta t) = v(t) + a(t) \cdot \Delta t
+\]</div>
+<p>And the position update equation is:</p>
+<div class="arithmatex">\[
+r(t+\Delta t) = r(t) + v(t) \cdot \Delta t
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(v(t)\)</span> is the velocity at time <span class="arithmatex">\(t\)</span>,
+- <span class="arithmatex">\(r(t)\)</span> is the position at time <span class="arithmatex">\(t\)</span>,
+- <span class="arithmatex">\(\Delta t\)</span> is the time step.</p>
+<h3 id="2-initial-conditions">2. <strong>Initial Conditions</strong></h3>
+<p>Let’s define the initial conditions for the simulation:
+- Initial position (<span class="arithmatex">\(r_0\)</span>): The initial altitude is given by the distance from the center of Earth. For example, if the payload is launched from a height of 100 km above Earth’s surface, the initial position would be <span class="arithmatex">\(r_0 = R_{\text{Earth}} + 100\,\text{km}\)</span>.
+- Initial velocity (<span class="arithmatex">\(v_0\)</span>): This is the initial speed of the payload. For example, if the payload is launched at 8 km/s, this would be the initial velocity.</p>
+<h3 id="3-numerical-integration-of-the-motion">3. <strong>Numerical Integration of the Motion</strong></h3>
+<p>We will use the <strong>Euler method</strong> for numerical integration to compute the position and velocity of the payload over time.</p>
+<h4 id="python-code-for-numerical-analysis">Python Code for Numerical Analysis:</h4>
+<p><img alt="alt text" src="../image-3.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
