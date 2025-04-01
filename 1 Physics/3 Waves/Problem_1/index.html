@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>PROBLEM 1 - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "PROBLEM 1";
         var mkdocs_page_input_path = "1 Physics/3 Waves/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -64,20 +64,8 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">3 Waves</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">PROBLEM 1</a>
 <ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-foundation-governing-equations-of-projectile-motion">1. Theoretical Foundation: Governing Equations of Projectile Motion</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#11-fundamental-principles">1.1. Fundamental Principles</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#12-equations-of-motion">1.2. Equations of Motion</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#13-family-of-solutions">1.3. Family of Solutions</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#14-graphical-representation">1.4. Graphical Representation</a>
-</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -175,7 +163,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">3 Waves</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">PROBLEM 1</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -183,116 +171,26 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
-<h2 id="1-theoretical-foundation-governing-equations-of-projectile-motion">1. Theoretical Foundation: Governing Equations of Projectile Motion</h2>
-<p>Projectile motion is a type of motion experienced by an object or particle that is thrown into the air, subject only to the force of gravity (neglecting air resistance). The object follows a curved path, and the goal is to analyze how the range (distance traveled horizontally) of a projectile depends on its initial velocity and the angle of projection.</p>
-<h3 id="11-fundamental-principles">1.1. <strong>Fundamental Principles</strong></h3>
-<p>Projectile motion can be analyzed using Newton's second law, which gives the equations of motion for an object under constant acceleration. In the case of projectile motion, we assume:
-- <strong>Constant acceleration due to gravity</strong>: The only force acting on the object (after it has been launched) is gravity, which causes a constant downward acceleration of <span class="arithmatex">\(g = 9.8 \, \text{m/s}^2\)</span> near the Earth's surface.
-- <strong>No air resistance</strong>: We assume that air resistance is negligible, which simplifies the problem to one involving only vertical and horizontal motions.</p>
-<h3 id="12-equations-of-motion">1.2. <strong>Equations of Motion</strong></h3>
-<p>For simplicity, we analyze the motion in two dimensions: <strong>horizontal (x)</strong> and <strong>vertical (y)</strong>.</p>
-<h4 id="121-horizontal-motion">1.2.1. Horizontal Motion</h4>
-<p>The horizontal motion is governed by Newton’s first law, as there are no horizontal forces (since air resistance is neglected). Thus, the horizontal velocity remains constant.</p>
-<div class="arithmatex">\[
-v_x = v_0 \cdot \cos(\theta)
-\]</div>
-<p>Where:
-- <span class="arithmatex">\(v_0\)</span> is the initial velocity of the projectile,
-- <span class="arithmatex">\(\theta\)</span> is the angle of projection,
-- <span class="arithmatex">\(v_x\)</span> is the horizontal velocity.</p>
-<p>The horizontal position <span class="arithmatex">\(x(t)\)</span> at time <span class="arithmatex">\(t\)</span> is given by:</p>
-<div class="arithmatex">\[
-x(t) = v_0 \cdot \cos(\theta) \cdot t
-\]</div>
-<h4 id="122-vertical-motion">1.2.2. Vertical Motion</h4>
-<p>The vertical motion is governed by the acceleration due to gravity. The equation for the vertical velocity <span class="arithmatex">\(v_y\)</span> at time <span class="arithmatex">\(t\)</span> is:</p>
-<div class="arithmatex">\[
-v_y(t) = v_0 \cdot \sin(\theta) - g \cdot t
-\]</div>
-<p>Where:
-- <span class="arithmatex">\(v_0 \cdot \sin(\theta)\)</span> is the initial vertical velocity,
-- <span class="arithmatex">\(g\)</span> is the acceleration due to gravity (<span class="arithmatex">\(9.8 \, \text{m/s}^2\)</span>).</p>
-<p>The vertical position <span class="arithmatex">\(y(t)\)</span> is:</p>
-<div class="arithmatex">\[
-y(t) = v_0 \cdot \sin(\theta) \cdot t - \frac{1}{2} g \cdot t^2
-\]</div>
-<h4 id="123-time-of-flight">1.2.3. Time of Flight</h4>
-<p>The time of flight <span class="arithmatex">\(T\)</span> is the total time the projectile is in the air. This occurs when the vertical position <span class="arithmatex">\(y(t)\)</span> becomes zero (i.e., when the projectile hits the ground):</p>
-<div class="arithmatex">\[
-0 = v_0 \cdot \sin(\theta) \cdot T - \frac{1}{2} g \cdot T^2
-\]</div>
-<p>Solving for <span class="arithmatex">\(T\)</span>:</p>
-<div class="arithmatex">\[
-T = \frac{2 v_0 \cdot \sin(\theta)}{g}
-\]</div>
-<h4 id="124-range">1.2.4. Range</h4>
-<p>The <strong>range</strong> <span class="arithmatex">\(R\)</span> is the horizontal distance the projectile travels before returning to the ground. This is found by substituting the time of flight <span class="arithmatex">\(T\)</span> into the horizontal displacement equation:</p>
-<div class="arithmatex">\[
-R = v_0 \cdot \cos(\theta) \cdot T
-\]</div>
-<p>Substituting the expression for <span class="arithmatex">\(T\)</span>:</p>
-<div class="arithmatex">\[
-R = \frac{v_0^2 \cdot \sin(2\theta)}{g}
-\]</div>
-<p>This is the <strong>general solution</strong> for the range of a projectile, which shows how the range depends on the initial velocity <span class="arithmatex">\(v_0\)</span> and the angle of projection <span class="arithmatex">\(\theta\)</span>. </p>
-<h3 id="13-family-of-solutions">1.3. <strong>Family of Solutions</strong></h3>
-<p>The equation for the range of a projectile, <span class="arithmatex">\(R = \frac{v_0^2 \cdot \sin(2\theta)}{g}\)</span>, illustrates how variations in the initial conditions lead to a family of solutions.</p>
-<ul>
-<li>
-<p><strong>Initial Velocity (<span class="arithmatex">\(v_0\)</span>)</strong>: The range is proportional to the square of the initial velocity. Doubling the initial velocity will quadruple the range.</p>
-</li>
-<li>
-<p><strong>Launch Angle (<span class="arithmatex">\(\theta\)</span>)</strong>: The sine function, <span class="arithmatex">\(\sin(2\theta)\)</span>, causes the range to depend on the launch angle. The range is maximized when <span class="arithmatex">\(\theta = 45^\circ\)</span> because <span class="arithmatex">\(\sin(90^\circ) = 1\)</span>. For angles less than <span class="arithmatex">\(45^\circ\)</span>, the range decreases. Similarly, for angles greater than <span class="arithmatex">\(45^\circ\)</span>, the range also decreases due to the symmetry of the sine function.</p>
-</li>
-<li>
-<p><strong>Gravitational Acceleration (<span class="arithmatex">\(g\)</span>)</strong>: The range is inversely proportional to <span class="arithmatex">\(g\)</span>. In locations with lower gravitational acceleration (e.g., on the Moon), the range would be greater.</p>
-</li>
-</ul>
-<h3 id="14-graphical-representation">1.4. <strong>Graphical Representation</strong></h3>
-<p>Let’s now create a graph to visualize how the range varies with the angle of projection for different initial velocities.</p>
-<p><img alt="alt text" src="../image.png"/></p>
-<h1 id="_1"></h1>
-<p><img alt="alt text" src="../image-1.png"/></p>
-<p><img alt="alt text" src="../image-2.png"/></p>
-<h1 id="_2"></h1>
-<h2 id="implementation-simulating-projectile-motion">Implementation: Simulating Projectile Motion</h2>
-<p>In this section, we will develop a <strong>computational tool</strong> that simulates projectile motion and visualizes the <strong>range as a function of the angle of projection</strong> for different sets of initial conditions. We will use Python to numerically solve the equations of projectile motion, accounting for initial velocity, launch angle, and gravitational acceleration.</p>
-<h3 id="1-governing-equations-of-motion">1. <strong>Governing Equations of Motion</strong></h3>
-<p>For projectile motion, the horizontal and vertical displacements are governed by the following equations:</p>
-<ul>
-<li>
-<p><strong>Horizontal Motion</strong>:
-  [
-  x(t) = v_0 \cdot \cos(\theta) \cdot t
-  ]</p>
-</li>
-<li>
-<p><strong>Vertical Motion</strong>:
-  [
-  y(t) = v_0 \cdot \sin(\theta) \cdot t - \frac{1}{2} g \cdot t^2
-  ]</p>
-</li>
-</ul>
-<p>Where:
-- <span class="arithmatex">\( v_0 \)</span> is the initial velocity,
-- <span class="arithmatex">\( \theta \)</span> is the launch angle,
-- <span class="arithmatex">\( g \)</span> is the acceleration due to gravity (9.8 m/s<span class="arithmatex">\(^2\)</span>),
-- <span class="arithmatex">\( t \)</span> is the time.</p>
-<p>The <strong>time of flight</strong> <span class="arithmatex">\( T \)</span> can be calculated by setting <span class="arithmatex">\( y(t) = 0 \)</span>, which yields:</p>
-<div class="arithmatex">\[
-T = \frac{2 v_0 \cdot \sin(\theta)}{g}
-\]</div>
-<p>The <strong>range</strong> <span class="arithmatex">\( R \)</span> is given by:</p>
-<div class="arithmatex">\[
-R = v_0 \cdot \cos(\theta) \cdot T = \frac{v_0^2 \cdot \sin(2\theta)}{g}
-\]</div>
-<h3 id="2-simulation-tool">2. <strong>Simulation Tool</strong></h3>
-<p>We will implement the simulation using <strong>Euler's method</strong> to numerically solve for the trajectory of the projectile. We will then visualize how the <strong>range</strong> depends on the <strong>angle of projection</strong> for different initial velocities.</p>
-<h3 id="3-python-code-for-simulating-and-visualizing-the-projectile-motion">3. <strong>Python Code for Simulating and Visualizing the Projectile Motion</strong></h3>
-<p><img alt="alt text" src="../image-3.png"/></p>
-<h1 id="_3"></h1>
-<h1 id="_4"></h1>
+<h1 id="problem-1">PROBLEM 1</h1>
+<h1 id="constants">Constants</h1>
+<p>A = 1               # Amplitude of the wave (meters)
+lambda_wave = 5     # Wavelength (meters)
+k = 2 * np.pi / lambda_wave  # Wave number, k = 2π/λ
+omega = 2 * np.pi   # Angular frequency (rad/s), ω = 2πf
+phi = 0             # Phase constant
+x0, y0 = 0, 0       # Point source location at the origin (x0, y0)
+f = 1               # Frequency (Hz)
+t = 0               # Start at t = 0 (you can modify this for time-dependent simulation)</p>
+<h1 id="create-a-grid-of-points-x-y">Create a grid of points (x, y)</h1>
+<p>x = np.linspace(-10, 10, 400)  # X position range
+y = np.linspace(-10, 10, 400)  # Y position range
+X, Y = np.meshgrid(x, y)       # Create mesh grid</p>
+<h1 id="calculate-the-distance-r-from-the-point-source-at-x0-y0-to-each-point-x-y">Calculate the distance r from the point source at (x0, y0) to each point (x, y)</h1>
+<p>r = np.sqrt((X - x0)<strong>2 + (Y - y0)</strong>2)</p>
+<h1 id="formula-x-y-t-a-r-cosk-r-t">Formula: η(x, y, t) = (A / √r) * cos(k * r - ω * t + φ)</h1>
+<h1 id="compute-the-wave-displacement-x-y-t-at-each-point-for-time-0">Compute the wave displacement η(x, y, t) at each point for time = 0</h1>
+<p>eta = (A / np.sqrt(r)) * np.cos(k * r - omega * t + phi)</p>
+<p><img alt="alt text" src="../image-5.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
