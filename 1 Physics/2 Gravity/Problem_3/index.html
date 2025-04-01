@@ -60,6 +60,20 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 3</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#analysis-of-possible-trajectories-for-a-payload-released-near-earth">Analysis of Possible Trajectories for a Payload Released Near Earth</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-gravitational-force-and-energy-considerations">1. Gravitational Force and Energy Considerations</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-elliptical-trajectory">2. Elliptical Trajectory</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-parabolic-trajectory">3. Parabolic Trajectory</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-hyperbolic-trajectory">4. Hyperbolic Trajectory</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#5-graphical-representation-of-trajectories">5. Graphical Representation of Trajectories</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -172,6 +186,70 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-3">Problem 3</h1>
+<h2 id="analysis-of-possible-trajectories-for-a-payload-released-near-earth">Analysis of Possible Trajectories for a Payload Released Near Earth</h2>
+<p>When a payload is released near Earth, its trajectory depends on several factors, including its initial velocity, the angle of release, and the gravitational influence of Earth. The most common types of trajectories for objects near Earth are <strong>parabolic</strong>, <strong>hyperbolic</strong>, and <strong>elliptical</strong>. These trajectories are determined by the object's velocity relative to Earth and the gravitational force exerted by Earth.</p>
+<h3 id="1-gravitational-force-and-energy-considerations">1. <strong>Gravitational Force and Energy Considerations</strong></h3>
+<p>The gravitational force <span class="arithmatex">\(F\)</span> acting on an object near Earth is given by Newton’s law of gravitation:</p>
+<div class="arithmatex">\[
+F = \frac{G M m}{r^2}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(G\)</span> is the gravitational constant (<span class="arithmatex">\(6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}\)</span>),
+- <span class="arithmatex">\(M\)</span> is the mass of Earth (<span class="arithmatex">\(5.972 \times 10^{24} \, \text{kg}\)</span>),
+- <span class="arithmatex">\(m\)</span> is the mass of the object,
+- <span class="arithmatex">\(r\)</span> is the distance between the object and the center of Earth.</p>
+<p>To describe the trajectory, we need to consider the specific mechanical energy <span class="arithmatex">\(\epsilon\)</span> of the object, which is the sum of its kinetic energy and potential energy:</p>
+<div class="arithmatex">\[
+\epsilon = \frac{v^2}{2} - \frac{GM}{r}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(v\)</span> is the velocity of the object at a given point,
+- <span class="arithmatex">\(r\)</span> is the distance from the center of Earth.</p>
+<p>Based on the specific mechanical energy, the trajectory type can be classified into three categories:</p>
+<h3 id="2-elliptical-trajectory">2. <strong>Elliptical Trajectory</strong></h3>
+<p>An elliptical trajectory occurs when the object’s velocity is lower than the escape velocity, but it is still sufficient to form an elliptical orbit around Earth. The object's total energy <span class="arithmatex">\(\epsilon\)</span> is negative in this case.</p>
+<h4 id="condition-for-elliptical-trajectory">Condition for Elliptical Trajectory:</h4>
+<p>For an elliptical orbit, the total energy of the object must be negative:</p>
+<div class="arithmatex">\[
+\epsilon &lt; 0
+\]</div>
+<p>This means the object is in a bound orbit around Earth. The object will travel in an ellipse, coming closest to Earth at the periapsis (the point of closest approach) and farthest from Earth at the apoapsis.</p>
+<p>The orbital parameters of an elliptical orbit are determined by:
+- <strong>Semi-major axis</strong> <span class="arithmatex">\(a\)</span>,
+- <strong>Eccentricity</strong> <span class="arithmatex">\(e\)</span>.</p>
+<p>The relationship between the semi-major axis and the specific orbital energy is given by:</p>
+<div class="arithmatex">\[
+\epsilon = -\frac{GM}{2a}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(a\)</span> is the semi-major axis of the ellipse,
+- <span class="arithmatex">\(e\)</span> is the orbital eccentricity, which measures the deviation from a perfect circle.</p>
+<h3 id="3-parabolic-trajectory">3. <strong>Parabolic Trajectory</strong></h3>
+<p>A parabolic trajectory is the special case of an elliptical orbit where the object’s velocity is exactly equal to the escape velocity at a given distance. In this case, the total mechanical energy <span class="arithmatex">\(\epsilon\)</span> is zero:</p>
+<div class="arithmatex">\[
+\epsilon = 0
+\]</div>
+<h4 id="condition-for-parabolic-trajectory">Condition for Parabolic Trajectory:</h4>
+<p>For an object to follow a parabolic trajectory, its velocity must be equal to the escape velocity at the point of release:</p>
+<div class="arithmatex">\[
+v = \sqrt{\frac{2GM}{r}}
+\]</div>
+<p>This velocity is the minimum speed required to escape Earth’s gravitational influence without ever returning, but in a manner that the object’s trajectory forms a parabola. A parabolic trajectory does not form a closed orbit; it is an open curve.</p>
+<h3 id="4-hyperbolic-trajectory">4. <strong>Hyperbolic Trajectory</strong></h3>
+<p>A hyperbolic trajectory occurs when the object's velocity exceeds the escape velocity at a given distance from Earth. In this case, the total mechanical energy <span class="arithmatex">\(\epsilon\)</span> is positive:</p>
+<div class="arithmatex">\[
+\epsilon &gt; 0
+\]</div>
+<h4 id="condition-for-hyperbolic-trajectory">Condition for Hyperbolic Trajectory:</h4>
+<p>For an object to follow a hyperbolic trajectory, its velocity must be greater than the escape velocity at the point of release:</p>
+<div class="arithmatex">\[
+v &gt; \sqrt{\frac{2GM}{r}}
+\]</div>
+<p>This means the object has more than enough energy to escape Earth’s gravitational pull and will follow a hyperbolic path. Hyperbolic trajectories are unbound, meaning the object will not return to Earth, and will continue traveling through space.</p>
+<h3 id="5-graphical-representation-of-trajectories">5. <strong>Graphical Representation of Trajectories</strong></h3>
+<p>To better visualize the differences in these trajectories, we can plot the paths of the object depending on its initial velocity. Let's simulate and plot these trajectories for a payload released near Earth.</p>
+<h4 id="python-code-for-trajectory-simulation">Python Code for Trajectory Simulation:</h4>
+<p><img alt="alt text" src="../image-2.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
