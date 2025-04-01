@@ -197,3 +197,55 @@ $$
 | Cosmic Velocity | Formula                                          | Physical Meaning                                      | Affected Parameters                          |
 |-----------------|--------------------------------------------------|-------------------------------------------------------|----------------------------------------------|
 | **First Cosmic Velocity**  | $v_1 = \sqrt{\frac{G M}{r}}$                      | Orbital velocity: speed to remain in a circular orbit. | Mass of the celestial body ($M_
+
+
+## Calculation and Visualization of Cosmic Velocities for Earth, Mars, and Jupiter
+
+In this task, we will calculate and visualize the first, second, and third cosmic velocities for different celestial bodies, such as Earth, Mars, and Jupiter. By applying the formulas derived earlier, we will determine the orbital velocity (first cosmic velocity), escape velocity (second cosmic velocity), and the velocity required to escape the entire Solar System (third cosmic velocity) for each of these bodies.
+
+### 1. **Cosmic Velocities Formulas Recap**
+
+We will use the following formulas to calculate the velocities:
+
+- **First Cosmic Velocity (Orbital Velocity)**:
+
+$$
+v_1 = \sqrt{\frac{G M}{r}}
+$$
+
+- **Second Cosmic Velocity (Escape Velocity)**:
+
+$$
+v_2 = \sqrt{\frac{2 G M}{r}}
+$$
+
+- **Third Cosmic Velocity (Escape from Solar System)**:
+
+$$
+v_3 = \sqrt{\frac{3 G M_{\text{sun}}}{r_{\text{Earth}}}}
+$$
+
+Where:
+- $G$ is the gravitational constant ($6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}$),
+- $M$ is the mass of the celestial body,
+- $r$ is the distance from the center of the celestial body (orbital radius),
+- $M_{\text{sun}}$ is the mass of the Sun ($1.989 \times 10^{30} \, \text{kg}$),
+- $r_{\text{Earth}}$ is the distance from Earth to the Sun (1 AU = $1.496 \times 10^{11}$ m).
+
+### 2. **Parameters for Celestial Bodies**
+
+Here are the parameters for Earth, Mars, and Jupiter:
+
+| Body      | Mass ($M$ in kg)          | Orbital Radius ($r$ in m)          |
+|-----------|---------------------------|------------------------------------|
+| Earth     | $5.972 \times 10^{24}$    | $6.371 \times 10^{6}$             |
+| Mars      | $6.417 \times 10^{23}$    | $3.396 \times 10^{6}$             |
+| Jupiter   | $1.898 \times 10^{27}$    | $6.991 \times 10^{7}$             |
+| Sun       | $1.989 \times 10^{30}$    | N/A (Used for third cosmic velocity) |
+
+### 3. **Python Code for Calculation and Visualization**
+
+We will implement the calculations and plot the velocities for Earth, Mars, and Jupiter.
+
+![alt text](image-1.png)
+
