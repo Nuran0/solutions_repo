@@ -237,3 +237,65 @@ For example, the discovery of exoplanets in the habitable zone (also known as th
 ### Conclusion
 
 Kepler's Third Law is a powerful tool for analyzing the orbits of celestial bodies. From the Moon's orbit around Earth to the orbits of planets in the Solar System, the law provides a fundamental understanding of the relationships between orbital period and orbital radius. It also serves as a foundation for studying exoplanets and understanding the dynamics of planetary systems across the universe.
+
+
+## Computational Model to Simulate Circular Orbits and Verify Kepler's Third Law
+
+In this task, we will implement a simple Python model to simulate the circular orbits of planets and verify Kepler's Third Law. The model will calculate the orbital period for a given orbital radius and compare it with the theoretical value derived from Kepler's Third Law.
+
+### 1. **Kepler's Third Law Recap**
+
+The formula derived from Kepler's Third Law for circular orbits is:
+
+$$
+T^2 = \frac{4 \pi^2 r^3}{G M}
+$$
+
+Where:
+- $T$ is the orbital period,
+- $r$ is the orbital radius (distance from the Sun),
+- $G$ is the gravitational constant ($6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}$),
+- $M$ is the mass of the central body (e.g., the Sun).
+
+### 2. **Python Implementation**
+
+We will create a Python script that simulates circular orbits for planets in the Solar System and verifies Kepler's Third Law by comparing the calculated orbital period with the theoretical value.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+G = 6.67430e-11  # Gravitational constant in m^3 kg^-1 s^-2
+M_sun = 1.989e30  # Mass of the Sun in kg
+
+# Function to calculate orbital period from Kepler's third law
+def calculate_orbital_period(r):
+    T_squared = (4 * np.pi**2 * r**3) / (G * M_sun)
+    T = np.sqrt(T_squared)  # Orbital period in seconds
+    return T
+
+# Convert orbital period from seconds to days
+def convert_seconds_to_days(seconds):
+    return seconds / (60 * 60 * 24)
+
+# Example orbital radii (in meters, representing different planets in the Solar System)
+orbital_radii = np.array([0.387e11, 0.723e11, 1.0e11, 1.524e11, 5.203e11, 9.58e11, 19.19e11, 30.07e11])  # Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
+
+# Calculate the orbital periods for these radii
+orbital_periods_seconds = np.array([calculate_orbital_period(r) for r in orbital_radii])
+orbital_periods_days = convert_seconds_to_days(orbital_periods_seconds)
+
+# Display the results
+for i, radius in enumerate(orbital_radii):
+    print(f"Orbital radius: {radius/1e9} million km -> Orbital period: {orbital_periods_days[i]:.2f} days")
+
+# Plotting the relationship between orbital period (days) and orbital radius (km)
+plt.figure(figsize=(8,6))
+plt.plot(orbital_radii / 1e9, orbital_periods_days, 'bo-', label='Simulated orbital periods')
+plt.xlabel('Orbital radius (million km)')
+plt.ylabel('Orbital period (days)')
+plt.title('Orbital Period vs. Orbital Radius (Kepler\'s Third Law)')
+plt.grid(True)
+plt.legend()
+plt.show()
