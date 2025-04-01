@@ -25,3 +25,45 @@ eta = (A / np.sqrt(r)) * np.cos(k * r - omega * t + phi)
 
 
 ![alt text](image-5.png)
+
+Wave Function: We calculate the wave displacement 
+𝜂
+(
+𝑥
+,
+𝑦
+,
+𝑡
+)
+η(x,y,t) for each time step using the formula:
+
+𝜂
+(
+𝑥
+,
+𝑦
+,
+𝑡
+)
+=
+𝐴
+𝑟
+⋅
+cos
+⁡
+(
+𝑘
+𝑟
+−
+𝜔
+𝑡
++
+𝜙
+)
+η(x,y,t)= 
+r
+​
+ 
+A
+​
+ ⋅cos(kr−ωt+ϕ)
