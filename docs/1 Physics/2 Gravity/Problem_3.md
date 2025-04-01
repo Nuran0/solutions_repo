@@ -230,3 +230,55 @@ To visualize these different trajectories, we can compare the paths of a payload
 
 ![alt text](image-4.png)
     
+# ##############################################
+
+## Computational Tool to Simulate and Visualize the Motion of a Payload Under Earth's Gravity
+
+In this task, we will develop a computational tool that simulates and visualizes the motion of a payload under Earth's gravitational influence, accounting for various initial velocities and directions. We will simulate the trajectory of the payload using numerical integration techniques (Euler's method) and visualize the results in a 2D plane.
+
+### 1. **Equations of Motion**
+
+The motion of the payload is governed by Newton's law of gravitation and the equations of motion. The gravitational acceleration at a distance $r$ from the center of Earth is given by:
+
+$$
+a(r) = -\frac{G M}{r^2}
+$$
+
+Where:
+- $a(r)$ is the gravitational acceleration,
+- $G$ is the gravitational constant ($6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}$),
+- $M$ is the mass of Earth ($5.972 \times 10^{24} \, \text{kg}$),
+- $r$ is the distance from the center of Earth.
+
+We will solve the equations of motion using the following update rules for velocity and position in 2D:
+- **Velocity Update**:
+  $$
+  v(t+\Delta t) = v(t) + a(t) \cdot \Delta t
+  $$
+- **Position Update**:
+  $$
+  r(t+\Delta t) = r(t) + v(t) \cdot \Delta t
+  $$
+
+Where:
+- $v(t)$ is the velocity at time $t$,
+- $r(t)$ is the position at time $t$,
+- $\Delta t$ is the time step.
+
+### 2. **Initial Conditions**
+
+For the simulation, we need to specify the following initial conditions:
+- **Initial Position**: The position of the payload (in Cartesian coordinates).
+- **Initial Velocity**: The initial speed and direction (given by velocity components $v_x$ and $v_y$).
+- **Time Step**: The time increment $\Delta t$ for numerical integration.
+
+### 3. **Simulation and Visualization**
+
+We will simulate the motion of the payload and visualize the trajectory in a 2D plane. The velocity will be broken into two components: horizontal ($v_x$) and vertical ($v_y$). The gravitational acceleration will only affect the vertical component of the motion.
+
+#### Python Code for Simulating and Visualizing the Motion:
+
+![alt text](image-5.png)
+
+
+
