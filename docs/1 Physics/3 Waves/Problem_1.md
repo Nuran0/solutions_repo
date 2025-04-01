@@ -98,28 +98,10 @@ Let’s now create a graph to visualize how the range varies with the angle of p
 ![alt text](image.png)
 
 # #####################################
-## Analysis of the Range
 
-In this section, we will investigate how the **horizontal range** of a projectile depends on its **angle of projection**. We will also explore how changes in other parameters, such as the **initial velocity** and **gravitational acceleration**, influence the range relationship.
+![alt text](image-1.png)
 
-### 1. **Range as a Function of the Launch Angle**
-
-The **horizontal range** of a projectile is the total horizontal distance the projectile travels before returning to the ground. The range $R$ is given by the equation:
-
-$$
-R = \frac{v_0^2 \cdot \sin(2\theta)}{g}
-$$
-
-Where:
-- $R$ is the horizontal range,
-- $v_0$ is the initial velocity,
-- $\theta$ is the angle of projection,
-- $g$ is the acceleration due to gravity.
-
-The **sine function**, $\sin(2\theta)$, governs the dependence of the range on the launch angle. This is a key observation, as it suggests the following:
-
-- **Symmetry**: The sine function is symmetric about $\theta = 45^\circ$. This means that the range is the same for launch angles $45^\circ$ and $45^\circ + \Delta\theta$, where $\Delta\theta$ is small. Therefore,
-
+![alt text](image-2.png)
 # #####################################
 # #####################################
 # #####################################
