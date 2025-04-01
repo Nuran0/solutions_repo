@@ -56,6 +56,22 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#derivation-of-keplers-third-law-for-circular-orbits">Derivation of Kepler's Third Law for Circular Orbits</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#step-1-newtons-law-of-universal-gravitation">Step 1: Newton's Law of Universal Gravitation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#step-2-centripetal-force">Step 2: Centripetal Force</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3-equating-the-forces">Step 3: Equating the Forces</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#step-4-orbital-velocity-and-orbital-period">Step 4: Orbital Velocity and Orbital Period</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#step-5-solving-for-the-orbital-period">Step 5: Solving for the Orbital Period</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#conclusion">Conclusion</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -172,6 +188,63 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h2 id="derivation-of-keplers-third-law-for-circular-orbits">Derivation of Kepler's Third Law for Circular Orbits</h2>
+<p>Kepler's Third Law states that the square of the orbital period (<span class="arithmatex">\(T\)</span>) of a planet is directly proportional to the cube of the semi-major axis (<span class="arithmatex">\(r\)</span>) of its orbit. This relationship can be derived from Newton's law of gravitation.</p>
+<h3 id="step-1-newtons-law-of-universal-gravitation">Step 1: Newton's Law of Universal Gravitation</h3>
+<p>According to Newton's law of gravitation, the gravitational force <span class="arithmatex">\(F\)</span> between two masses, such as the Sun and a planet, is given by:</p>
+<div class="arithmatex">\[
+F = \frac{G M m}{r^2}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(G\)</span> is the gravitational constant,
+- <span class="arithmatex">\(M\)</span> is the mass of the Sun,
+- <span class="arithmatex">\(m\)</span> is the mass of the planet,
+- <span class="arithmatex">\(r\)</span> is the distance between the two bodies.</p>
+<h3 id="step-2-centripetal-force">Step 2: Centripetal Force</h3>
+<p>For a planet to remain in a circular orbit around the Sun, the gravitational force must provide the centripetal force required for circular motion. The centripetal force <span class="arithmatex">\(F_{c}\)</span> for an object moving in a circle is given by:</p>
+<div class="arithmatex">\[
+F_{c} = \frac{m v^2}{r}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(m\)</span> is the mass of the planet,
+- <span class="arithmatex">\(v\)</span> is the orbital velocity of the planet,
+- <span class="arithmatex">\(r\)</span> is the orbital radius.</p>
+<h3 id="step-3-equating-the-forces">Step 3: Equating the Forces</h3>
+<p>Since the gravitational force provides the centripetal force, we set these two forces equal to each other:</p>
+<div class="arithmatex">\[
+\frac{G M m}{r^2} = \frac{m v^2}{r}
+\]</div>
+<p>Simplifying the equation:</p>
+<div class="arithmatex">\[
+\frac{G M}{r^2} = \frac{v^2}{r}
+\]</div>
+<div class="arithmatex">\[
+v^2 = \frac{G M}{r}
+\]</div>
+<h3 id="step-4-orbital-velocity-and-orbital-period">Step 4: Orbital Velocity and Orbital Period</h3>
+<p>The orbital velocity <span class="arithmatex">\(v\)</span> of the planet can also be related to the orbital period <span class="arithmatex">\(T\)</span>. The distance traveled in one orbit is the circumference of the orbit, which is <span class="arithmatex">\(2 \pi r\)</span>. Therefore, the orbital velocity <span class="arithmatex">\(v\)</span> is given by:</p>
+<div class="arithmatex">\[
+v = \frac{2 \pi r}{T}
+\]</div>
+<p>Substituting this expression for <span class="arithmatex">\(v\)</span> into the previous equation:</p>
+<div class="arithmatex">\[
+\left(\frac{2 \pi r}{T}\right)^2 = \frac{G M}{r}
+\]</div>
+<p>Simplifying:</p>
+<div class="arithmatex">\[
+\frac{4 \pi^2 r^2}{T^2} = \frac{G M}{r}
+\]</div>
+<h3 id="step-5-solving-for-the-orbital-period">Step 5: Solving for the Orbital Period</h3>
+<p>Now, solve for the orbital period <span class="arithmatex">\(T^2\)</span>:</p>
+<div class="arithmatex">\[
+T^2 = \frac{4 \pi^2 r^3}{G M}
+\]</div>
+<h3 id="conclusion">Conclusion</h3>
+<p>This equation shows that the square of the orbital period (<span class="arithmatex">\(T^2\)</span>) is proportional to the cube of the orbital radius (<span class="arithmatex">\(r^3\)</span>). The constant of proportionality is <span class="arithmatex">\(\frac{4 \pi^2}{G M}\)</span>, where <span class="arithmatex">\(M\)</span> is the mass of the central body (such as the Sun) and <span class="arithmatex">\(G\)</span> is the gravitational constant. Therefore, we have:</p>
+<div class="arithmatex">\[
+T^2 \propto r^3
+\]</div>
+<p>This is Kepler's Third Law, which applies to circular orbits.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
