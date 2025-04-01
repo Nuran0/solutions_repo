@@ -98,3 +98,55 @@ To better visualize the differences in these trajectories, we can plot the paths
 #### Python Code for Trajectory Simulation:
 
 ![alt text](image-2.png)
+
+# ##################################################################
+## Numerical Analysis of the Path of a Payload Based on Initial Conditions
+
+In this task, we will perform a numerical analysis to compute the path of a payload released near Earth based on given initial conditions, such as position, velocity, and altitude. We will use numerical integration techniques to simulate the trajectory of the object under the influence of Earth's gravity.
+
+### 1. **Equations of Motion**
+
+The motion of the payload can be described using Newton’s law of gravitation and the equations of motion. The acceleration due to gravity at a distance $r$ from the center of Earth is given by:
+
+$$
+a(r) = -\frac{G M}{r^2}
+$$
+
+Where:
+- $a(r)$ is the gravitational acceleration,
+- $G$ is the gravitational constant ($6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}$),
+- $M$ is the mass of Earth ($5.972 \times 10^{24} \, \text{kg}$),
+- $r$ is the distance from the center of Earth.
+
+Using Newton’s second law, the velocity and position of the payload can be updated using numerical integration.
+
+The velocity update equation is:
+
+$$
+v(t+\Delta t) = v(t) + a(t) \cdot \Delta t
+$$
+
+And the position update equation is:
+
+$$
+r(t+\Delta t) = r(t) + v(t) \cdot \Delta t
+$$
+
+Where:
+- $v(t)$ is the velocity at time $t$,
+- $r(t)$ is the position at time $t$,
+- $\Delta t$ is the time step.
+
+### 2. **Initial Conditions**
+
+Let’s define the initial conditions for the simulation:
+- Initial position ($r_0$): The initial altitude is given by the distance from the center of Earth. For example, if the payload is launched from a height of 100 km above Earth’s surface, the initial position would be $r_0 = R_{\text{Earth}} + 100\,\text{km}$.
+- Initial velocity ($v_0$): This is the initial speed of the payload. For example, if the payload is launched at 8 km/s, this would be the initial velocity.
+
+### 3. **Numerical Integration of the Motion**
+
+We will use the **Euler method** for numerical integration to compute the position and velocity of the payload over time.
+
+#### Python Code for Numerical Analysis:
+
+![alt text](image-3.png)
