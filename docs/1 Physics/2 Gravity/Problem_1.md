@@ -234,9 +234,7 @@ Kepler's Third Law is not just useful for our Solar System. It is also essential
 
 For example, the discovery of exoplanets in the habitable zone (also known as the "Goldilocks Zone") of their stars is based on the application of Kepler's Third Law. If the orbital period is known, the distance from the star can be calculated, which helps determine if the planet might support liquid water.
 
-### Conclusion
 
-Kepler's Third Law is a powerful tool for analyzing the orbits of celestial bodies. From the Moon's orbit around Earth to the orbits of planets in the Solar System, the law provides a fundamental understanding of the relationships between orbital period and orbital radius. It also serves as a foundation for studying exoplanets and understanding the dynamics of planetary systems across the universe.
 
 
 ## Computational Model to Simulate Circular Orbits and Verify Kepler's Third Law
@@ -262,4 +260,5 @@ Where:
 We will create a Python script that simulates circular orbits for planets in the Solar System and verifies Kepler's Third Law by comparing the calculated orbital period with the theoretical value.
 
 ![alt text](image.png)
+
 
