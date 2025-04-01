@@ -172,24 +172,6 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">PROBLEM 1</h1>
-<h1 id="constants">Constants</h1>
-<p>A = 1               # Amplitude of the wave (meters)
-lambda_wave = 5     # Wavelength (meters)
-k = 2 * np.pi / lambda_wave  # Wave number, k = 2π/λ
-omega = 2 * np.pi   # Angular frequency (rad/s), ω = 2πf
-phi = 0             # Phase constant
-x0, y0 = 0, 0       # Point source location at the origin (x0, y0)
-f = 1               # Frequency (Hz)
-t = 0               # Start at t = 0 (you can modify this for time-dependent simulation)</p>
-<h1 id="create-a-grid-of-points-x-y">Create a grid of points (x, y)</h1>
-<p>x = np.linspace(-10, 10, 400)  # X position range
-y = np.linspace(-10, 10, 400)  # Y position range
-X, Y = np.meshgrid(x, y)       # Create mesh grid</p>
-<h1 id="calculate-the-distance-r-from-the-point-source-at-x0-y0-to-each-point-x-y">Calculate the distance r from the point source at (x0, y0) to each point (x, y)</h1>
-<p>r = np.sqrt((X - x0)<strong>2 + (Y - y0)</strong>2)</p>
-<h1 id="formula-x-y-t-a-r-cosk-r-t">Formula: η(x, y, t) = (A / √r) * cos(k * r - ω * t + φ)</h1>
-<h1 id="compute-the-wave-displacement-x-y-t-at-each-point-for-time-0">Compute the wave displacement η(x, y, t) at each point for time = 0</h1>
-<p>eta = (A / np.sqrt(r)) * np.cos(k * r - omega * t + phi)</p>
 <p><img alt="alt text" src="../image-5.png"/></p>
 <p>Explanation of the Code:
 Constants:</p>
