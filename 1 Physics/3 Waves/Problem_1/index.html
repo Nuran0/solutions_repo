@@ -256,6 +256,41 @@ R = \frac{v_0^2 \cdot \sin(2\theta)}{g}
 <p><img alt="alt text" src="../image-1.png"/></p>
 <p><img alt="alt text" src="../image-2.png"/></p>
 <h1 id="_2"></h1>
+<h2 id="implementation-simulating-projectile-motion">Implementation: Simulating Projectile Motion</h2>
+<p>In this section, we will develop a <strong>computational tool</strong> that simulates projectile motion and visualizes the <strong>range as a function of the angle of projection</strong> for different sets of initial conditions. We will use Python to numerically solve the equations of projectile motion, accounting for initial velocity, launch angle, and gravitational acceleration.</p>
+<h3 id="1-governing-equations-of-motion">1. <strong>Governing Equations of Motion</strong></h3>
+<p>For projectile motion, the horizontal and vertical displacements are governed by the following equations:</p>
+<ul>
+<li>
+<p><strong>Horizontal Motion</strong>:
+  [
+  x(t) = v_0 \cdot \cos(\theta) \cdot t
+  ]</p>
+</li>
+<li>
+<p><strong>Vertical Motion</strong>:
+  [
+  y(t) = v_0 \cdot \sin(\theta) \cdot t - \frac{1}{2} g \cdot t^2
+  ]</p>
+</li>
+</ul>
+<p>Where:
+- <span class="arithmatex">\( v_0 \)</span> is the initial velocity,
+- <span class="arithmatex">\( \theta \)</span> is the launch angle,
+- <span class="arithmatex">\( g \)</span> is the acceleration due to gravity (9.8 m/s<span class="arithmatex">\(^2\)</span>),
+- <span class="arithmatex">\( t \)</span> is the time.</p>
+<p>The <strong>time of flight</strong> <span class="arithmatex">\( T \)</span> can be calculated by setting <span class="arithmatex">\( y(t) = 0 \)</span>, which yields:</p>
+<div class="arithmatex">\[
+T = \frac{2 v_0 \cdot \sin(\theta)}{g}
+\]</div>
+<p>The <strong>range</strong> <span class="arithmatex">\( R \)</span> is given by:</p>
+<div class="arithmatex">\[
+R = v_0 \cdot \cos(\theta) \cdot T = \frac{v_0^2 \cdot \sin(2\theta)}{g}
+\]</div>
+<h3 id="2-simulation-tool">2. <strong>Simulation Tool</strong></h3>
+<p>We will implement the simulation using <strong>Euler's method</strong> to numerically solve for the trajectory of the projectile. We will then visualize how the <strong>range</strong> depends on the <strong>angle of projection</strong> for different initial velocities.</p>
+<h3 id="3-python-code-for-simulating-and-visualizing-the-projectile-motion">3. <strong>Python Code for Simulating and Visualizing the Projectile Motion</strong></h3>
+<p><img alt="alt text" src="../image-3.png"/></p>
 <h1 id="_3"></h1>
 <h1 id="_4"></h1>
 </div>
