@@ -103,5 +103,50 @@ Let’s now create a graph to visualize how the range varies with the angle of p
 
 ![alt text](image-2.png)
 # #####################################
+## Implementation: Simulating Projectile Motion
+
+In this section, we will develop a **computational tool** that simulates projectile motion and visualizes the **range as a function of the angle of projection** for different sets of initial conditions. We will use Python to numerically solve the equations of projectile motion, accounting for initial velocity, launch angle, and gravitational acceleration.
+
+### 1. **Governing Equations of Motion**
+
+For projectile motion, the horizontal and vertical displacements are governed by the following equations:
+
+- **Horizontal Motion**:
+  \[
+  x(t) = v_0 \cdot \cos(\theta) \cdot t
+  \]
+  
+- **Vertical Motion**:
+  \[
+  y(t) = v_0 \cdot \sin(\theta) \cdot t - \frac{1}{2} g \cdot t^2
+  \]
+
+Where:
+- \( v_0 \) is the initial velocity,
+- \( \theta \) is the launch angle,
+- \( g \) is the acceleration due to gravity (9.8 m/s\(^2\)),
+- \( t \) is the time.
+
+The **time of flight** \( T \) can be calculated by setting \( y(t) = 0 \), which yields:
+
+\[
+T = \frac{2 v_0 \cdot \sin(\theta)}{g}
+\]
+
+The **range** \( R \) is given by:
+
+\[
+R = v_0 \cdot \cos(\theta) \cdot T = \frac{v_0^2 \cdot \sin(2\theta)}{g}
+\]
+
+### 2. **Simulation Tool**
+
+We will implement the simulation using **Euler's method** to numerically solve for the trajectory of the projectile. We will then visualize how the **range** depends on the **angle of projection** for different initial velocities.
+
+### 3. **Python Code for Simulating and Visualizing the Projectile Motion**
+
+![alt text](image-3.png)
+
+
 # #####################################
 # #####################################
