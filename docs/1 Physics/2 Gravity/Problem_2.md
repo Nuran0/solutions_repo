@@ -61,3 +61,139 @@ Where:
 
 #### Physical Meaning:
 The third cosmic velocity is the speed needed for an object to break free from the gravitational pull of the Sun and leave the Solar System. This
+
+
+
+## Mathematical Derivations and Parameters Affecting the First, Second, and Third Cosmic Velocities
+
+The first, second, and third cosmic velocities are essential for understanding how objects interact with celestial bodies under the influence of gravity. These velocities depend on several key parameters and can be derived through the principles of gravitational force and orbital mechanics. Let's analyze each of the velocities in detail, including the mathematical derivations and the parameters that affect them.
+
+### 1. **First Cosmic Velocity (Orbital Velocity)**
+
+The first cosmic velocity is the velocity an object needs to remain in a stable circular orbit around a celestial body, such as a planet or a star. The object’s velocity must balance the gravitational pull of the central body with the centrifugal force experienced by the object in motion.
+
+#### Derivation:
+
+Consider an object of mass $m$ orbiting a celestial body of mass $M$ at a distance $r$ from the center of the body. The gravitational force $F_g$ acting on the object is given by:
+
+$$
+F_g = \frac{G M m}{r^2}
+$$
+
+Where:
+- $G$ is the gravitational constant ($6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}$),
+- $M$ is the mass of the central body (e.g., Earth or the Sun),
+- $m$ is the mass of the orbiting object,
+- $r$ is the orbital radius (distance from the center of the celestial body).
+
+For the object to stay in a circular orbit, the centripetal force $F_c$ must balance the gravitational force:
+
+$$
+F_c = \frac{m v_1^2}{r}
+$$
+
+Where $v_1$ is the orbital velocity (the first cosmic velocity).
+
+Setting the gravitational force equal to the centripetal force:
+
+$$
+\frac{G M m}{r^2} = \frac{m v_1^2}{r}
+$$
+
+Simplifying this equation:
+
+$$
+v_1^2 = \frac{G M}{r}
+$$
+
+Therefore, the first cosmic velocity is:
+
+$$
+v_1 = \sqrt{\frac{G M}{r}}
+$$
+
+#### Parameters Affecting the First Cosmic Velocity:
+- **Mass of the central body ($M$)**: The greater the mass of the celestial body, the higher the velocity required to stay in orbit. For instance, satellites orbiting the Earth need to travel at about 7.8 km/s, while those orbiting Jupiter require a higher velocity due to Jupiter's greater mass.
+- **Orbital radius ($r$)**: The closer the object is to the celestial body, the higher the orbital velocity required. The orbital velocity decreases with increasing distance from the body, following the inverse square root relationship.
+
+### 2. **Second Cosmic Velocity (Escape Velocity)**
+
+The second cosmic velocity is the speed an object must attain to escape the gravitational pull of a celestial body. This is the minimum velocity required for an object to break free from the body’s gravitational influence without any further propulsion.
+
+#### Derivation:
+
+The work-energy principle states that the kinetic energy required to escape the gravitational field of a celestial body must equal the gravitational potential energy. The gravitational potential energy $U$ is given by:
+
+$$
+U = -\frac{G M m}{r}
+$$
+
+Where $r$ is the distance from the center of the celestial body to the object, and $m$ is the mass of the object.
+
+The kinetic energy $K$ of an object is given by:
+
+$$
+K = \frac{1}{2} m v_2^2
+$$
+
+Where $v_2$ is the escape velocity.
+
+For the object to escape, the total mechanical energy (sum of kinetic and potential energy) must be zero:
+
+$$
+\frac{1}{2} m v_2^2 = \frac{G M m}{r}
+$$
+
+Solving for $v_2$:
+
+$$
+v_2 = \sqrt{\frac{2 G M}{r}}
+$$
+
+#### Parameters Affecting the Second Cosmic Velocity:
+- **Mass of the central body ($M$)**: The escape velocity increases with the mass of the celestial body. A more massive body exerts a stronger gravitational pull, requiring a higher velocity to escape.
+- **Orbital radius ($r$)**: The escape velocity decreases with increasing distance from the celestial body. The farther an object is from the body, the less velocity is required to escape.
+
+### 3. **Third Cosmic Velocity (Escape from the Solar System)**
+
+The third cosmic velocity is the velocity required for an object to escape the gravitational influence of the entire star system, such as the Solar System. This velocity allows the object to move away from the Sun and enter interstellar space.
+
+#### Derivation:
+
+To escape the Solar System, an object must achieve a velocity greater than the escape velocity of the Sun at the Earth's distance from the Sun. The gravitational potential energy associated with the Sun's gravitational field is:
+
+$$
+U_{\text{sun}} = -\frac{G M_{\text{sun}} m}{r_{\text{Earth}}}
+$$
+
+Where:
+- $M_{\text{sun}}$ is the mass of the Sun,
+- $r_{\text{Earth}}$ is the distance from Earth to the Sun (approximately 1 AU).
+
+The required kinetic energy to escape is:
+
+$$
+K = \frac{1}{2} m v_3^2
+$$
+
+Setting the total energy equal to zero for escape:
+
+$$
+\frac{1}{2} m v_3^2 = \frac{G M_{\text{sun}} m}{r_{\text{Earth}}}
+$$
+
+Solving for $v_3$:
+
+$$
+v_3 = \sqrt{\frac{3 G M_{\text{sun}}}{r_{\text{Earth}}}}
+$$
+
+#### Parameters Affecting the Third Cosmic Velocity:
+- **Mass of the Sun ($M_{\text{sun}}$)**: The more massive the central star (in this case, the Sun), the higher the velocity required to escape its gravitational field.
+- **Distance from the Sun ($r_{\text{Earth}}$)**: The third cosmic velocity depends on the distance from the Sun. Since the distance to the Sun is large (about 1 AU), the required velocity to escape the Solar System is relatively high.
+
+### Summary of the Cosmic Velocities:
+
+| Cosmic Velocity | Formula                                          | Physical Meaning                                      | Affected Parameters                          |
+|-----------------|--------------------------------------------------|-------------------------------------------------------|----------------------------------------------|
+| **First Cosmic Velocity**  | $v_1 = \sqrt{\frac{G M}{r}}$                      | Orbital velocity: speed to remain in a circular orbit. | Mass of the celestial body ($M_
