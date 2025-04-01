@@ -281,6 +281,3 @@ We will simulate the motion of the payload and visualize the trajectory in a 2D 
 ![alt text](image-5.png)
 
 
-
-# ###############################################
-![alt text](image-6.png)
