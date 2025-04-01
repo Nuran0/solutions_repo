@@ -363,6 +363,41 @@ r(t+\Delta t) = r(t) + v(t) \cdot \Delta t
 <p>To visualize these different trajectories, we can compare the paths of a payload released at different velocities: <strong>elliptical</strong>, <strong>parabolic</strong>, and <strong>hyperbolic</strong>. These trajectories show the relationship between velocity, energy, and gravitational influence in different mission scenarios.</p>
 <h4 id="python-code-for-visualizing-trajectories">Python Code for Visualizing Trajectories:</h4>
 <p><img alt="alt text" src="../image-4.png"/></p>
+<h1 id="_3"></h1>
+<h2 id="computational-tool-to-simulate-and-visualize-the-motion-of-a-payload-under-earths-gravity">Computational Tool to Simulate and Visualize the Motion of a Payload Under Earth's Gravity</h2>
+<p>In this task, we will develop a computational tool that simulates and visualizes the motion of a payload under Earth's gravitational influence, accounting for various initial velocities and directions. We will simulate the trajectory of the payload using numerical integration techniques (Euler's method) and visualize the results in a 2D plane.</p>
+<h3 id="1-equations-of-motion_1">1. <strong>Equations of Motion</strong></h3>
+<p>The motion of the payload is governed by Newton's law of gravitation and the equations of motion. The gravitational acceleration at a distance <span class="arithmatex">\(r\)</span> from the center of Earth is given by:</p>
+<div class="arithmatex">\[
+a(r) = -\frac{G M}{r^2}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(a(r)\)</span> is the gravitational acceleration,
+- <span class="arithmatex">\(G\)</span> is the gravitational constant (<span class="arithmatex">\(6.67430 \times 10^{-11} \, \text{m}^3 \, \text{kg}^{-1} \, \text{s}^{-2}\)</span>),
+- <span class="arithmatex">\(M\)</span> is the mass of Earth (<span class="arithmatex">\(5.972 \times 10^{24} \, \text{kg}\)</span>),
+- <span class="arithmatex">\(r\)</span> is the distance from the center of Earth.</p>
+<p>We will solve the equations of motion using the following update rules for velocity and position in 2D:
+- <strong>Velocity Update</strong>:
+  $$
+  v(t+\Delta t) = v(t) + a(t) \cdot \Delta t
+  $$
+- <strong>Position Update</strong>:
+  $$
+  r(t+\Delta t) = r(t) + v(t) \cdot \Delta t
+  $$</p>
+<p>Where:
+- <span class="arithmatex">\(v(t)\)</span> is the velocity at time <span class="arithmatex">\(t\)</span>,
+- <span class="arithmatex">\(r(t)\)</span> is the position at time <span class="arithmatex">\(t\)</span>,
+- <span class="arithmatex">\(\Delta t\)</span> is the time step.</p>
+<h3 id="2-initial-conditions_1">2. <strong>Initial Conditions</strong></h3>
+<p>For the simulation, we need to specify the following initial conditions:
+- <strong>Initial Position</strong>: The position of the payload (in Cartesian coordinates).
+- <strong>Initial Velocity</strong>: The initial speed and direction (given by velocity components <span class="arithmatex">\(v_x\)</span> and <span class="arithmatex">\(v_y\)</span>).
+- <strong>Time Step</strong>: The time increment <span class="arithmatex">\(\Delta t\)</span> for numerical integration.</p>
+<h3 id="3-simulation-and-visualization">3. <strong>Simulation and Visualization</strong></h3>
+<p>We will simulate the motion of the payload and visualize the trajectory in a 2D plane. The velocity will be broken into two components: horizontal (<span class="arithmatex">\(v_x\)</span>) and vertical (<span class="arithmatex">\(v_y\)</span>). The gravitational acceleration will only affect the vertical component of the motion.</p>
+<h4 id="python-code-for-simulating-and-visualizing-the-motion">Python Code for Simulating and Visualizing the Motion:</h4>
+<p><img alt="alt text" src="../image-5.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
