@@ -131,4 +131,5 @@ The algorithm for calculating the equivalent resistance using graph theory itera
 
 - **Nested Combinations**: When reducing a part of the circuit, a new series or parallel combination may emerge from the simplified graph. These new combinations must also be reduced until the entire circuit is simplified to a single equivalent resistance.
 
-Guided_project_2.ipynb - Colab.html
+![alt text](image.png)
+
