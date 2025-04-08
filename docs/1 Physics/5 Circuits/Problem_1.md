@@ -133,3 +133,78 @@ The algorithm for calculating the equivalent resistance using graph theory itera
 
 ![alt text](image.png)
 
+# Option 2: Advanced Task – Full Implementation
+
+## Overview
+
+In this task, you will implement an algorithm to calculate the **equivalent resistance** of a circuit, represented as a graph. The graph consists of **nodes** (junctions) and **edges** (resistors). The goal is to simplify the graph iteratively by combining resistors in **series** and **parallel** until a single equivalent resistance remains between two nodes.
+
+### Key Requirements
+
+1. **Input**: The algorithm should accept a **circuit graph** as input.
+2. **Handling Configurations**: The implementation must handle **arbitrary resistor configurations**, including **nested series** and **parallel connections**.
+3. **Output**: The algorithm should output the **final equivalent resistance** after all simplifications.
+
+### Task Breakdown
+
+#### 1. Implement the algorithm to calculate equivalent resistance using graph theory.
+   - The circuit is represented as a **graph**: nodes are circuit junctions, and edges represent resistors.
+   - The algorithm will iterate over the graph, identifying and reducing **series** and **parallel** connections.
+   - Series resistances are added, and parallel resistances are calculated as:
+     $$
+     \frac{1}{R_{\text{eq}}} = \sum_{i=1}^{n} \frac{1}{R_i}
+     $$
+
+#### 2. Handle nested configurations.
+   - The algorithm should be able to handle situations where simplifying one part of the circuit reveals more series or parallel combinations that need to be reduced further.
+   - For series combinations:
+     $$
+     R_{\text{eq}} = R_1 + R_2
+     $$
+
+#### 3. Testing the implementation with examples:
+   - **Simple Series and Parallel Combinations**: Example where all resistors are either in series or parallel.
+   - **Nested Configurations**: Example where series and parallel resistors are interspersed, requiring multiple iterations to simplify.
+   - **Complex Graphs with Multiple Cycles**: A more complex example with multiple resistors and cycles.
+
+### Formulas Recap
+
+1. **Series Connection**:
+   - The equivalent resistance of two resistors in series is the sum of their individual resistances:
+     $$
+     R_{\text{eq}} = R_1 + R_2
+     $$
+
+2. **Parallel Connection**:
+   - The equivalent resistance of two resistors in parallel is given by:
+     $$
+     \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2}
+     $$
+
+   - For $n$ resistors in parallel:
+     $$
+     \frac{1}{R_{\text{eq}}} = \sum_{i=1}^{n} \frac{1}{R_i}
+     $$
+
+3. **Nested Configurations**:
+   - Simplify the circuit by identifying and reducing series and parallel combinations iteratively until only one equivalent resistance remains.
+
+---
+
+### Steps to Implement:
+
+1. **Graph Representation**: Represent the circuit as a graph with nodes (junctions) and edges (resistors with their resistance values).
+   
+2. **Series and Parallel Reduction**: 
+   - Implement functions to detect series and parallel connections and reduce them.
+   - For series: Add resistances.
+   - For parallel: Use the parallel resistance formula.
+
+3. **Iterative Simplification**: 
+   - Repeatedly simplify the graph by combining resistors until only one equivalent resistance remains.
+
+4. **Final Output**: Output the final equivalent resistance between the two terminal nodes.
+
+---
+
+![alt text](image-1.png)
