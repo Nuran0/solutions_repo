@@ -111,3 +111,24 @@ To detect parallel connections:
 ### 5. Termination
 The algorithm terminates when the graph has been reduced to a single equivalent resistance between the two terminal nodes of the circuit.
 
+# Pseudocode for Identifying Series and Parallel Connections and Iterative Reduction (Including Nested Combinations)
+
+## Overview
+
+The algorithm for calculating the equivalent resistance using graph theory iteratively identifies and reduces series and parallel connections in a circuit. When resistors are combined in series or parallel, their resistances are reduced, simplifying the circuit. This can lead to new connections being formed, which also need to be simplified. This is known as **nested combinations**, where a simple reduction can reveal further series or parallel connections in the graph.
+
+## Key Concepts
+
+- **Series Connection**: Two resistors are in series if they are connected end to end. The total resistance is the sum of individual resistances:
+  $$
+  R_{\text{eq}} = R_1 + R_2
+  $$
+
+- **Parallel Connection**: Two resistors are in parallel if they are connected between the same two nodes. The total resistance is given by:
+  $$
+  \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2}
+  $$
+
+- **Nested Combinations**: When reducing a part of the circuit, a new series or parallel combination may emerge from the simplified graph. These new combinations must also be reduced until the entire circuit is simplified to a single equivalent resistance.
+
+Guided_project_2.ipynb - Colab.html
