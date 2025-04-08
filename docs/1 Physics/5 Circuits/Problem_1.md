@@ -133,6 +133,8 @@ The algorithm for calculating the equivalent resistance using graph theory itera
 
 ![alt text](image.png)
 
+![alt text](image-2.png)
+
 # Option 2: Advanced Task – Full Implementation
 
 ## Overview
