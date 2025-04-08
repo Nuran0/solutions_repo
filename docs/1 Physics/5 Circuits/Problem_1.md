@@ -210,3 +210,5 @@ In this task, you will implement an algorithm to calculate the **equivalent resi
 ---
 
 ![alt text](image-1.png)
+
+![alt text](image-3.png)
