@@ -217,6 +217,51 @@ $$</p>
 </ul>
 <h3 id="5-termination">5. Termination</h3>
 <p>The algorithm terminates when the graph has been reduced to a single equivalent resistance between the two terminal nodes of the circuit.</p>
+<h1 id="algorithm-for-calculating-equivalent-resistance-using-graph-theory_1">Algorithm for Calculating Equivalent Resistance Using Graph Theory</h1>
+<h2 id="overview_1">Overview</h2>
+<p>To calculate the equivalent resistance of an electrical circuit using graph theory, we represent the circuit as a graph. The nodes in the graph represent junctions (or circuit nodes), and the edges represent resistors with weights equal to their resistance values. The algorithm simplifies the circuit step by step by reducing series and parallel resistors, ultimately calculating the equivalent resistance between two nodes.</p>
+<h2 id="algorithm-steps_1">Algorithm Steps</h2>
+<h3 id="1-graph-representation_1">1. Graph Representation</h3>
+<p>The circuit is represented as an undirected graph:
+- <strong>Nodes</strong>: Represent junctions or components in the circuit.
+- <strong>Edges</strong>: Represent resistors with resistance values assigned as weights.</p>
+<p>The graph is constructed as follows:
+$$
+G = (V, E)
+$$
+Where:
+- <span class="arithmatex">\(V\)</span> is the set of vertices (nodes),
+- <span class="arithmatex">\(E\)</span> is the set of edges (resistors) with weights representing resistance values.</p>
+<h3 id="2-identify-linear-chains-for-series-reduction_1">2. Identify Linear Chains for Series Reduction</h3>
+<p>In a series connection, resistors are connected end to end. The equivalent resistance of resistors in series is the sum of their resistances. To identify series connections:
+- Traverse the graph using <strong>Depth-First Search (DFS)</strong> or <strong>Breadth-First Search (BFS)</strong>.
+- If two resistors are connected linearly (i.e., one node connects them), reduce their resistance by summing the individual resistances.</p>
+<p>For two resistors in series:
+$$
+R_{\text{eq}} = R_1 + R_2
+$$
+Where:
+- <span class="arithmatex">\(R_1\)</span> and <span class="arithmatex">\(R_2\)</span> are the individual resistances.</p>
+<h3 id="3-identify-cycles-for-parallel-reduction_1">3. Identify Cycles for Parallel Reduction</h3>
+<p>In parallel connections, resistors share the same two nodes. The equivalent resistance of resistors in parallel is given by:
+$$
+\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2}
+$$
+For <span class="arithmatex">\(n\)</span> resistors in parallel:
+$$
+\frac{1}{R_{\text{eq}}} = \sum_{i=1}^n \frac{1}{R_i}
+$$</p>
+<p>To detect parallel connections:
+- Identify cycles in the graph where two or more resistors share the same pair of nodes.
+- Use DFS to detect cycles and reduce the resistances accordingly by using the parallel resistance formula.</p>
+<h3 id="4-iterative-simplification_1">4. Iterative Simplification</h3>
+<ul>
+<li>Start from any node and traverse the graph.</li>
+<li>In each iteration, detect series and parallel connections and reduce the resistances.</li>
+<li>Simplify the graph step by step until only one equivalent resistance remains between the two nodes.</li>
+</ul>
+<h3 id="5-termination_1">5. Termination</h3>
+<p>The algorithm terminates when the graph has been reduced to a single equivalent resistance between the two terminal nodes of the circuit.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
