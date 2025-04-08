@@ -284,6 +284,94 @@ $$</p>
 </li>
 </ul>
 <p><img alt="alt text" src="../image.png"/></p>
+<h1 id="option-2-advanced-task-full-implementation">Option 2: Advanced Task – Full Implementation</h1>
+<h2 id="overview_3">Overview</h2>
+<p>In this task, you will implement an algorithm to calculate the <strong>equivalent resistance</strong> of a circuit, represented as a graph. The graph consists of <strong>nodes</strong> (junctions) and <strong>edges</strong> (resistors). The goal is to simplify the graph iteratively by combining resistors in <strong>series</strong> and <strong>parallel</strong> until a single equivalent resistance remains between two nodes.</p>
+<h3 id="key-requirements">Key Requirements</h3>
+<ol>
+<li><strong>Input</strong>: The algorithm should accept a <strong>circuit graph</strong> as input.</li>
+<li><strong>Handling Configurations</strong>: The implementation must handle <strong>arbitrary resistor configurations</strong>, including <strong>nested series</strong> and <strong>parallel connections</strong>.</li>
+<li><strong>Output</strong>: The algorithm should output the <strong>final equivalent resistance</strong> after all simplifications.</li>
+</ol>
+<h3 id="task-breakdown">Task Breakdown</h3>
+<h4 id="1-implement-the-algorithm-to-calculate-equivalent-resistance-using-graph-theory">1. Implement the algorithm to calculate equivalent resistance using graph theory.</h4>
+<ul>
+<li>The circuit is represented as a <strong>graph</strong>: nodes are circuit junctions, and edges represent resistors.</li>
+<li>The algorithm will iterate over the graph, identifying and reducing <strong>series</strong> and <strong>parallel</strong> connections.</li>
+<li>Series resistances are added, and parallel resistances are calculated as:
+     $$
+     \frac{1}{R_{\text{eq}}} = \sum_{i=1}^{n} \frac{1}{R_i}
+     $$</li>
+</ul>
+<h4 id="2-handle-nested-configurations">2. Handle nested configurations.</h4>
+<ul>
+<li>The algorithm should be able to handle situations where simplifying one part of the circuit reveals more series or parallel combinations that need to be reduced further.</li>
+<li>For series combinations:
+     $$
+     R_{\text{eq}} = R_1 + R_2
+     $$</li>
+</ul>
+<h4 id="3-testing-the-implementation-with-examples">3. Testing the implementation with examples:</h4>
+<ul>
+<li><strong>Simple Series and Parallel Combinations</strong>: Example where all resistors are either in series or parallel.</li>
+<li><strong>Nested Configurations</strong>: Example where series and parallel resistors are interspersed, requiring multiple iterations to simplify.</li>
+<li><strong>Complex Graphs with Multiple Cycles</strong>: A more complex example with multiple resistors and cycles.</li>
+</ul>
+<h3 id="formulas-recap">Formulas Recap</h3>
+<ol>
+<li><strong>Series Connection</strong>:</li>
+<li>
+<p>The equivalent resistance of two resistors in series is the sum of their individual resistances:
+     $$
+     R_{\text{eq}} = R_1 + R_2
+     $$</p>
+</li>
+<li>
+<p><strong>Parallel Connection</strong>:</p>
+</li>
+<li>
+<p>The equivalent resistance of two resistors in parallel is given by:
+     $$
+     \frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2}
+     $$</p>
+</li>
+<li>
+<p>For <span class="arithmatex">\(n\)</span> resistors in parallel:
+     $$
+     \frac{1}{R_{\text{eq}}} = \sum_{i=1}^{n} \frac{1}{R_i}
+     $$</p>
+</li>
+<li>
+<p><strong>Nested Configurations</strong>:</p>
+</li>
+<li>Simplify the circuit by identifying and reducing series and parallel combinations iteratively until only one equivalent resistance remains.</li>
+</ol>
+<hr/>
+<h3 id="steps-to-implement">Steps to Implement:</h3>
+<ol>
+<li>
+<p><strong>Graph Representation</strong>: Represent the circuit as a graph with nodes (junctions) and edges (resistors with their resistance values).</p>
+</li>
+<li>
+<p><strong>Series and Parallel Reduction</strong>: </p>
+</li>
+<li>Implement functions to detect series and parallel connections and reduce them.</li>
+<li>For series: Add resistances.</li>
+<li>
+<p>For parallel: Use the parallel resistance formula.</p>
+</li>
+<li>
+<p><strong>Iterative Simplification</strong>: </p>
+</li>
+<li>
+<p>Repeatedly simplify the graph by combining resistors until only one equivalent resistance remains.</p>
+</li>
+<li>
+<p><strong>Final Output</strong>: Output the final equivalent resistance between the two terminal nodes.</p>
+</li>
+</ol>
+<hr/>
+<p><img alt="alt text" src="../image-1.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
