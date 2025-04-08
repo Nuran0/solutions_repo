@@ -199,4 +199,16 @@ $$
 
 ![alt text](image.png)
 
+# 3. Parameter Exploration
+
+## Objective
+
+In this task, we will explore how varying the following parameters affects the trajectory of a charged particle under the influence of electric and magnetic fields:
+
+1. **Field Strengths ($\mathbf{E}$, $\mathbf{B}$)**: Vary the magnitudes of the electric and magnetic fields to see how they affect the motion of the particle.
+2. **Initial Particle Velocity ($\mathbf{v}$)**: Change the initial velocity of the particle and observe how different velocities influence the motion.
+3. **Charge and Mass of the Particle ($q$, $m$)**: Vary the charge and mass of the particle to explore how these properties affect the particle's trajectory.
+
+![alt text](image-2.png)
+
 
