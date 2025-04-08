@@ -143,4 +143,60 @@ $$
 K.E. = \frac{1}{2} mv^2
 $$
 
+# 2. Simulating Particle Motion
+
+## Objective
+
+Implement a simulation to compute and visualize the trajectory of a charged particle under various field conditions. Specifically, we will simulate:
+
+1. **Uniform Magnetic Field**: The particle will undergo circular motion due to the Lorentz force from the magnetic field.
+2. **Combined Uniform Electric and Magnetic Fields**: The particle will experience both forces simultaneously, resulting in helical or drift motion.
+3. **Crossed Electric and Magnetic Fields**: In this configuration, the particle will experience complex motion due to the perpendicular electric and magnetic fields.
+
+The simulation will visualize the trajectory of the particle based on its initial conditions and the field configurations.
+
+## Simulation Implementation
+
+### 1. Uniform Magnetic Field
+
+In a uniform magnetic field, a charged particle will experience a force perpendicular to its velocity, causing it to move in a circular path. The radius of the circular path is determined by:
+
+$$
+r = \frac{mv}{qB}
+$$
+
+Where:
+- $m$ is the mass of the particle,
+- $v$ is the velocity of the particle,
+- $q$ is the charge of the particle,
+- $B$ is the magnetic field strength.
+
+Use the Euler or Runge-Kutta method to solve the equations of motion for the particle in the magnetic field.
+
+### 2. Combined Uniform Electric and Magnetic Fields
+
+When both electric and magnetic fields are applied, the Lorentz force is the sum of the forces from each field:
+
+$$
+\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+$$
+
+This configuration results in helical motion, where the particle spirals along the magnetic field lines due to the electric field. The motion can be described as:
+
+$$
+\mathbf{r}(t) = \mathbf{r_0} + \mathbf{v_0}t + \frac{q}{m} \int (\mathbf{E} + \mathbf{v} \times \mathbf{B}) dt
+$$
+
+### 3. Crossed Electric and Magnetic Fields
+
+When the electric and magnetic fields are crossed (i.e., perpendicular), the particle will experience a drift velocity in addition to its circular motion. The resulting trajectory is a combination of drift motion and circular motion. The drift velocity is given by:
+
+$$
+\mathbf{v_{\text{drift}}} = \frac{\mathbf{E} \times \mathbf{B}}{B^2}
+$$
+
+![alt text](image-1.png)
+
+![alt text](image.png)
+
 
