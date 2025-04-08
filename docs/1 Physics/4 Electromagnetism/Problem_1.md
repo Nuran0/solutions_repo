@@ -211,4 +211,16 @@ In this task, we will explore how varying the following parameters affects the t
 
 ![alt text](image-2.png)
 
+# 4. Visualization
+
+## Objective
+
+In this task, we will create clear and labeled plots to visualize the trajectory of a charged particle under the influence of electric and magnetic fields. We will show:
+
+1. **2D and 3D plots** of the particle's path in different scenarios.
+2. **Physical phenomena** like the **Larmor radius** (the radius of the circular motion of the particle in a magnetic field) and **drift velocity** (the velocity component due to crossed electric and magnetic fields).
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
 
