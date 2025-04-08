@@ -270,6 +270,43 @@ E_{\text{total}} = K.E. + \text{Work done by } \mathbf{E}
 <div class="arithmatex">\[
 K.E. = \frac{1}{2} mv^2
 \]</div>
+<h1 id="2-simulating-particle-motion">2. Simulating Particle Motion</h1>
+<h2 id="objective">Objective</h2>
+<p>Implement a simulation to compute and visualize the trajectory of a charged particle under various field conditions. Specifically, we will simulate:</p>
+<ol>
+<li><strong>Uniform Magnetic Field</strong>: The particle will undergo circular motion due to the Lorentz force from the magnetic field.</li>
+<li><strong>Combined Uniform Electric and Magnetic Fields</strong>: The particle will experience both forces simultaneously, resulting in helical or drift motion.</li>
+<li><strong>Crossed Electric and Magnetic Fields</strong>: In this configuration, the particle will experience complex motion due to the perpendicular electric and magnetic fields.</li>
+</ol>
+<p>The simulation will visualize the trajectory of the particle based on its initial conditions and the field configurations.</p>
+<h2 id="simulation-implementation">Simulation Implementation</h2>
+<h3 id="1-uniform-magnetic-field">1. Uniform Magnetic Field</h3>
+<p>In a uniform magnetic field, a charged particle will experience a force perpendicular to its velocity, causing it to move in a circular path. The radius of the circular path is determined by:</p>
+<div class="arithmatex">\[
+r = \frac{mv}{qB}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\(m\)</span> is the mass of the particle,
+- <span class="arithmatex">\(v\)</span> is the velocity of the particle,
+- <span class="arithmatex">\(q\)</span> is the charge of the particle,
+- <span class="arithmatex">\(B\)</span> is the magnetic field strength.</p>
+<p>Use the Euler or Runge-Kutta method to solve the equations of motion for the particle in the magnetic field.</p>
+<h3 id="2-combined-uniform-electric-and-magnetic-fields">2. Combined Uniform Electric and Magnetic Fields</h3>
+<p>When both electric and magnetic fields are applied, the Lorentz force is the sum of the forces from each field:</p>
+<div class="arithmatex">\[
+\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+\]</div>
+<p>This configuration results in helical motion, where the particle spirals along the magnetic field lines due to the electric field. The motion can be described as:</p>
+<div class="arithmatex">\[
+\mathbf{r}(t) = \mathbf{r_0} + \mathbf{v_0}t + \frac{q}{m} \int (\mathbf{E} + \mathbf{v} \times \mathbf{B}) dt
+\]</div>
+<h3 id="3-crossed-electric-and-magnetic-fields">3. Crossed Electric and Magnetic Fields</h3>
+<p>When the electric and magnetic fields are crossed (i.e., perpendicular), the particle will experience a drift velocity in addition to its circular motion. The resulting trajectory is a combination of drift motion and circular motion. The drift velocity is given by:</p>
+<div class="arithmatex">\[
+\mathbf{v_{\text{drift}}} = \frac{\mathbf{E} \times \mathbf{B}}{B^2}
+\]</div>
+<p><img alt="alt text" src="../image-1.png"/></p>
+<p><img alt="alt text" src="../image.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
