@@ -216,6 +216,95 @@
 </ol>
 <h2 id="graph">Graph</h2>
 <p><img alt="alt text" src="../image-2.png"/></p>
+<h1 id="task-3_1">TASK 3</h1>
+<p>```markdown</p>
+<h1 id="practical-applications-of-the-central-limit-theorem-clt">Practical Applications of the Central Limit Theorem (CLT)</h1>
+<h2 id="overview_3">Overview</h2>
+<p>The Central Limit Theorem (CLT) is a fundamental concept in probability and statistics with significant real-world applications. The theorem asserts that as the sample size increases, the sampling distribution of the sample mean will approximate a normal distribution, regardless of the population's original distribution. This property of the sample mean has several important practical applications, especially in fields such as:</p>
+<ol>
+<li><strong>Estimating Population Parameters</strong></li>
+<li><strong>Quality Control in Manufacturing</strong></li>
+<li><strong>Predicting Outcomes in Financial Models</strong></li>
+</ol>
+<p>In this task, we will explore how CLT is used in these contexts.</p>
+<h2 id="1-estimating-population-parameters">1. <strong>Estimating Population Parameters</strong></h2>
+<h3 id="application">Application:</h3>
+<p>One of the most common applications of the CLT is in <strong>estimating population parameters</strong> (such as the population mean or population proportion) from a sample. Since the sampling distribution of the sample mean is approximately normal (thanks to CLT), we can use the properties of the normal distribution to make inferences about the population.</p>
+<h3 id="example">Example:</h3>
+<p>Suppose we want to estimate the average height of all adults in a city. Instead of measuring every adult, we take a random sample of 100 individuals. The sample mean of their heights will follow a normal distribution, and we can use this sample mean to estimate the population mean with a known level of confidence (using confidence intervals).</p>
+<h3 id="importance">Importance:</h3>
+<ul>
+<li>CLT allows statisticians to make <strong>reliable estimates</strong> of population parameters without needing to collect data from the entire population.</li>
+<li>The sample mean, derived from random samples, is more precise and unbiased, especially with larger sample sizes.</li>
+</ul>
+<h2 id="2-quality-control-in-manufacturing">2. <strong>Quality Control in Manufacturing</strong></h2>
+<h3 id="application_1">Application:</h3>
+<p>In manufacturing, CLT plays a crucial role in <strong>quality control</strong>. Quality control involves monitoring the production process to ensure products meet specified standards. By sampling products from a production line and calculating the sample mean for measurements (such as weight, length, or volume), manufacturers can use CLT to assess whether the production process is under control.</p>
+<h3 id="example_1">Example:</h3>
+<p>Imagine a factory that manufactures light bulbs. The company can take samples of light bulbs to measure their lifespan. The sample mean of the bulb lifespans will follow a normal distribution, thanks to CLT. If the sample mean falls outside a pre-determined range (control limits), it indicates that the production process may be out of control and corrective action is needed.</p>
+<h3 id="importance_1">Importance:</h3>
+<ul>
+<li>CLT helps manufacturers detect <strong>deviations in the production process</strong> early by using sample means to monitor quality.</li>
+<li>The <strong>normality assumption</strong> (from CLT) helps create standardized control charts, allowing for more efficient and consistent quality assurance.</li>
+</ul>
+<h2 id="3-predicting-outcomes-in-financial-models">3. <strong>Predicting Outcomes in Financial Models</strong></h2>
+<h3 id="application_2">Application:</h3>
+<p>In financial modeling and risk management, the CLT is used to <strong>predict financial outcomes</strong> based on sampled data. Whether it's predicting stock returns, portfolio performance, or assessing the risk of investment strategies, CLT provides a mathematical foundation for making predictions and decisions under uncertainty.</p>
+<h3 id="example_2">Example:</h3>
+<p>When evaluating the expected return of a portfolio, financial analysts may take a sample of historical returns over a period of time. According to CLT, the distribution of the sample means of those returns will approach a normal distribution. This enables analysts to estimate expected returns and assess the <strong>risk (variance)</strong> associated with the portfolio.</p>
+<h3 id="importance_2">Importance:</h3>
+<ul>
+<li>CLT allows analysts to model <strong>uncertainty in financial outcomes</strong> and predict future returns with confidence.</li>
+<li>It is critical in <strong>risk assessment</strong>, enabling the estimation of value-at-risk (VaR), standard deviations, and confidence intervals for various financial metrics.</li>
+</ul>
+<h2 id="summary-of-practical-applications">Summary of Practical Applications:</h2>
+<ol>
+<li><strong>Estimating Population Parameters</strong>:</li>
+<li>Use of CLT in making reliable estimates from sample data.</li>
+<li>
+<p>Essential for inferential statistics and survey analysis.</p>
+</li>
+<li>
+<p><strong>Quality Control in Manufacturing</strong>:</p>
+</li>
+<li>Use of CLT to monitor and maintain consistent quality in production.</li>
+<li>
+<p>Helps detect out-of-control processes early and ensure product consistency.</p>
+</li>
+<li>
+<p><strong>Predicting Outcomes in Financial Models</strong>:</p>
+</li>
+<li>CLT enables accurate prediction of financial outcomes by using the properties of the normal distribution.</li>
+<li>Vital for financial decision-making, portfolio management, and risk analysis.</li>
+</ol>
+<h2 id="conclusion">Conclusion:</h2>
+<p>The Central Limit Theorem is a powerful statistical tool with far-reaching applications. From estimating population parameters to ensuring quality in manufacturing and predicting financial outcomes, CLT provides a mathematical basis for making informed decisions and understanding variability in real-world data. Its role in simplifying complex problems and enabling accurate predictions is invaluable across a wide range of fields.</p>
+<p>import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns</p>
+<h1 id="parameters">Parameters</h1>
+<p>population_size = 10000
+num_samples = 500
+sample_size = 30
+control_limit = 50  # Example control limit for sample means</p>
+<h1 id="simulate-manufacturing-data-lifespan-of-light-bulbs">Simulate manufacturing data (lifespan of light bulbs)</h1>
+<p>population = np.random.normal(60, 5, population_size)  # Mean = 60, Standard deviation = 5</p>
+<h1 id="simulating-quality-control-sampling">Simulating quality control sampling</h1>
+<p>sample_means = []
+for _ in range(num_samples):
+    sample = np.random.choice(population, sample_size, replace=False)
+    sample_means.append(np.mean(sample))</p>
+<h1 id="plot-the-sampling-distribution-of-the-sample-means">Plot the sampling distribution of the sample means</h1>
+<p>sns.histplot(sample_means, kde=True, bins=30)
+plt.axvline(x=control_limit, color='red', linestyle='--', label='Control Limit')
+plt.title('Sampling Distribution of Light Bulb Lifespan')
+plt.xlabel('Sample Mean')
+plt.ylabel('Density')
+plt.legend()
+plt.show()</p>
+<h1 id="check-if-any-sample-means-exceed-control-limit">Check if any sample means exceed control limit</h1>
+<p>out_of_control = [mean for mean in sample_means if mean &gt; control_limit]
+print(f"Number of samples exceeding control limit: {len(out_of_control)}")</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
