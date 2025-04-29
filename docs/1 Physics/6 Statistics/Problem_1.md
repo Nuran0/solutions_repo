@@ -16,7 +16,7 @@ The steps are as follows:
 3. **Repeat the sampling process** many times to build the sampling distribution of the mean.
 4. **Visualize the results** using histograms and probability density functions (PDFs).
 
-## Code
+
 ![alt text](image.png)
 
 
@@ -34,6 +34,6 @@ In this task, we will randomly sample data from a population and calculate the s
 3. **Repeat the Process**: Repeat the sampling process multiple times to build the sampling distribution.
 4. **Visualization**: Plot histograms for each sample size and observe the convergence to normality.
 
-## Code
+
 
 ![alt text](image-1.png)
