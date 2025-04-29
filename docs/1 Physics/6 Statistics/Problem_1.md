@@ -17,11 +17,13 @@ The steps are as follows:
 4. **Visualize the results** using histograms and probability density functions (PDFs).
 
 ## Code
+![alt text](image.png)
 
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 
 # Set random seed for reproducibility
 np.random.seed(42)
