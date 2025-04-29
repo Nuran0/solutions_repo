@@ -207,48 +207,7 @@
 <li><strong>Visualization</strong>: Plot histograms for each sample size and observe the convergence to normality.</li>
 </ol>
 <h2 id="code_1">Code</h2>
-<p>```python
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns</p>
-<h1 id="set-random-seed-for-reproducibility">Set random seed for reproducibility</h1>
-<p>np.random.seed(42)</p>
-<h1 id="parameters">Parameters</h1>
-<p>population_size = 10000
-num_samples = 1000
-sample_sizes = [5, 10, 30, 50]  # Different sample sizes to observe the CLT
-population_type = 'uniform'  # For simplicity, we will use uniform distribution here</p>
-<h1 id="function-to-simulate-sampling-distribution-for-a-given-population-and-sample-size">Function to simulate sampling distribution for a given population and sample size</h1>
-<p>def simulate_sampling_distribution(population_type, population_size, num_samples, sample_size):
-    if population_type == 'uniform':
-        population = np.random.uniform(0, 1, population_size)</p>
-<pre><code>sample_means = []
-
-for _ in range(num_samples):
-    sample = np.random.choice(population, sample_size, replace=False)
-    sample_means.append(np.mean(sample))
-
-return sample_means
-</code></pre>
-<h1 id="plotting-function-for-different-sample-sizes">Plotting function for different sample sizes</h1>
-<p>def plot_sampling_distribution(population_type, population_size, num_samples, sample_sizes):
-    fig, axes = plt.subplots(1, len(sample_sizes), figsize=(15, 5))</p>
-<pre><code>for i, sample_size in enumerate(sample_sizes):
-    sample_means = simulate_sampling_distribution(population_type, population_size, num_samples, sample_size)
-
-    ax = axes[i]
-    sns.histplot(sample_means, kde=True, ax=ax, bins=30, stat='density')
-    ax.set_title(f'Sample size = {sample_size}')
-    ax.set_xlabel('Sample Mean')
-    ax.set_ylabel('Density')
-
-fig.suptitle(f'Sampling Distribution for {population_type.capitalize()} Distribution')
-plt.tight_layout()
-plt.subplots_adjust(top=0.85)
-plt.show()
-</code></pre>
-<h1 id="simulate-and-plot-for-the-selected-population-type">Simulate and plot for the selected population type</h1>
-<p>plot_sampling_distribution(population_type, population_size, num_samples, sample_sizes)</p>
+<p><img alt="alt text" src="../image-1.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
