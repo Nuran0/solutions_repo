@@ -277,34 +277,8 @@
 <li>CLT enables accurate prediction of financial outcomes by using the properties of the normal distribution.</li>
 <li>Vital for financial decision-making, portfolio management, and risk analysis.</li>
 </ol>
-<h2 id="conclusion">Conclusion:</h2>
-<p>The Central Limit Theorem is a powerful statistical tool with far-reaching applications. From estimating population parameters to ensuring quality in manufacturing and predicting financial outcomes, CLT provides a mathematical basis for making informed decisions and understanding variability in real-world data. Its role in simplifying complex problems and enabling accurate predictions is invaluable across a wide range of fields.</p>
-<p>import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns</p>
-<h1 id="parameters">Parameters</h1>
-<p>population_size = 10000
-num_samples = 500
-sample_size = 30
-control_limit = 50  # Example control limit for sample means</p>
-<h1 id="simulate-manufacturing-data-lifespan-of-light-bulbs">Simulate manufacturing data (lifespan of light bulbs)</h1>
-<p>population = np.random.normal(60, 5, population_size)  # Mean = 60, Standard deviation = 5</p>
-<h1 id="simulating-quality-control-sampling">Simulating quality control sampling</h1>
-<p>sample_means = []
-for _ in range(num_samples):
-    sample = np.random.choice(population, sample_size, replace=False)
-    sample_means.append(np.mean(sample))</p>
-<h1 id="plot-the-sampling-distribution-of-the-sample-means">Plot the sampling distribution of the sample means</h1>
-<p>sns.histplot(sample_means, kde=True, bins=30)
-plt.axvline(x=control_limit, color='red', linestyle='--', label='Control Limit')
-plt.title('Sampling Distribution of Light Bulb Lifespan')
-plt.xlabel('Sample Mean')
-plt.ylabel('Density')
-plt.legend()
-plt.show()</p>
-<h1 id="check-if-any-sample-means-exceed-control-limit">Check if any sample means exceed control limit</h1>
-<p>out_of_control = [mean for mean in sample_means if mean &gt; control_limit]
-print(f"Number of samples exceeding control limit: {len(out_of_control)}")</p>
+<h1 id="graph_1">GRAPH</h1>
+<p><img alt="alt text" src="../image-3.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
