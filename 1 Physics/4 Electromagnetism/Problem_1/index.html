@@ -402,6 +402,139 @@ def simulate(E, B, r0, v0):
 <li>Add <strong>collisions or frictional forces</strong> to model realistic systems</li>
 </ul>
 <hr/>
+<h1 id="3">3.</h1>
+<ul>
+<li>Clear explanations,</li>
+<li>Python code with variable parameters,</li>
+<li>Visual plots,</li>
+<li>Observations for different configurations.</li>
+</ul>
+<hr/>
+<h1 id="task-3-parameter-exploration-in-lorentz-force-simulations">Task 3: Parameter Exploration in Lorentz Force Simulations</h1>
+<h2 id="goal">Goal</h2>
+<p>We analyze how varying:</p>
+<ul>
+<li><strong>Electric field</strong> <span class="arithmatex">\(\mathbf{E}\)</span>,</li>
+<li><strong>Magnetic field</strong> <span class="arithmatex">\(\mathbf{B}\)</span>,</li>
+<li><strong>Initial velocity</strong> <span class="arithmatex">\(\mathbf{v}_0\)</span>,</li>
+<li><strong>Charge</strong> <span class="arithmatex">\(q\)</span>,</li>
+<li><strong>Mass</strong> <span class="arithmatex">\(m\)</span>,</li>
+</ul>
+<p>...affects the motion of a charged particle governed by the <strong>Lorentz force</strong>:</p>
+<div class="arithmatex">\[
+\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}
+\quad \Rightarrow \quad
+\frac{d\mathbf{v}}{dt} = \frac{q}{m}(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+\]</div>
+<p>We simulate and visualize these effects in Python.</p>
+<hr/>
+<h2 id="generalized-python-code">🔧 Generalized Python Code</h2>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def simulate(E, B, r0, v0, q, m, dt=0.01, steps=1000):
+    r = np.zeros((steps, 3))
+    v = np.zeros((steps, 3))
+    r[0] = r0
+    v[0] = v0
+
+    for i in range(1, steps):
+        F = q * (E + np.cross(v[i-1], B))
+        a = F / m
+        v[i] = v[i-1] + a * dt
+        r[i] = r[i-1] + v[i] * dt
+
+    return r
+</code></pre>
+<hr/>
+<h2 id="exploration-1-varying-magnetic-field-strength">Exploration 1: Varying Magnetic Field Strength</h2>
+<h3 id="setup">Setup:</h3>
+<ul>
+<li><span class="arithmatex">\(\mathbf{E} = [0, 0, 0]\)</span></li>
+<li><span class="arithmatex">\(\mathbf{v}_0 = [1, 0, 0]\)</span></li>
+<li>Vary <span class="arithmatex">\(\mathbf{B} = [0, 0, B_z]\)</span> with <span class="arithmatex">\(B_z = 0.5, 1.0, 2.0\)</span></li>
+</ul>
+<p><img alt="alt text" src="../image-8.png"/></p>
+<p><strong>Observation</strong>: Stronger <span class="arithmatex">\(B_z\)</span> results in <strong>tighter circular motion</strong> (smaller radius).</p>
+<hr/>
+<h2 id="exploration-2-varying-initial-velocity">Exploration 2: Varying Initial Velocity</h2>
+<h3 id="setup_1">Setup:</h3>
+<ul>
+<li><span class="arithmatex">\(\mathbf{E} = [0, 0, 0]\)</span></li>
+<li><span class="arithmatex">\(\mathbf{B} = [0, 0, 1]\)</span></li>
+<li><span class="arithmatex">\(\mathbf{v}_0 = [v_x, 0, 0]\)</span>, with <span class="arithmatex">\(v_x = 0.5, 1.0, 2.0\)</span></li>
+</ul>
+<p><img alt="alt text" src="../image-9.png"/></p>
+<p><strong>Observation</strong>: Higher <span class="arithmatex">\(v_x\)</span> gives <strong>larger circular radius</strong> and faster rotation.</p>
+<hr/>
+<h2 id="exploration-3-varying-particle-mass-and-charg">Exploration 3: Varying Particle Mass and Charg</h2>
+<h3 id="setup_2">Setup:</h3>
+<ul>
+<li><span class="arithmatex">\(\mathbf{E} = [0, 0, 0]\)</span>, <span class="arithmatex">\(\mathbf{B} = [0, 0, 1]\)</span></li>
+<li><span class="arithmatex">\(\mathbf{v}_0 = [1, 0, 0]\)</span></li>
+<li>
+<p>Compare:</p>
+</li>
+<li>
+<p><span class="arithmatex">\(q = 1, m = 1\)</span></p>
+</li>
+<li><span class="arithmatex">\(q = 1, m = 2\)</span></li>
+<li><span class="arithmatex">\(q = 2, m = 1\)</span></li>
+</ul>
+<p><img alt="alt text" src="../image-10.png"/></p>
+<p><strong>Observation</strong>:</p>
+<ul>
+<li>Increasing <span class="arithmatex">\(q\)</span> → tighter circles (stronger Lorentz force)</li>
+<li>Increasing <span class="arithmatex">\(m\)</span> → wider circles (more inertia)</li>
+</ul>
+<hr/>
+<h2 id="summary-of-effects">Summary of Effects</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Effect on Trajectory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\mathbf{E}\)</span></td>
+<td>Adds acceleration in direction of field</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mathbf{B}\)</span></td>
+<td>Causes circular or helical motion</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mathbf{v}_0\)</span></td>
+<td>Determines radius of curvature</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(q\)</span></td>
+<td>Strengthens the Lorentz force</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(m\)</span></td>
+<td>Increases resistance to motion change</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="insights">Insights</h2>
+<ul>
+<li>The <strong>cyclotron radius</strong> is given by:</li>
+</ul>
+<div class="arithmatex">\[
+r = \frac{mv}{|q||\mathbf{B}|}
+\]</div>
+<ul>
+<li>Helical motion occurs if <span class="arithmatex">\(\mathbf{v}_0\)</span> has a component along <span class="arithmatex">\(\mathbf{B}\)</span>.</li>
+<li>When <span class="arithmatex">\(\mathbf{E} \perp \mathbf{B}\)</span>, particles <strong>drift</strong> with velocity:</li>
+</ul>
+<div class="arithmatex">\[
+\mathbf{v}_{\text{drift}} = \frac{\mathbf{E} \times \mathbf{B}}{|\mathbf{B}|^2}
+\]</div>
+<hr/>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
