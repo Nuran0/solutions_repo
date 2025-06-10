@@ -535,6 +535,98 @@ r = \frac{mv}{|q||\mathbf{B}|}
 \mathbf{v}_{\text{drift}} = \frac{\mathbf{E} \times \mathbf{B}}{|\mathbf{B}|^2}
 \]</div>
 <hr/>
+<h1 id="4">4.</h1>
+<hr/>
+<h1 id="task-4-visualizing-charged-particle-motion-under-lorentz-force">Task 4: Visualizing Charged Particle Motion under Lorentz Force</h1>
+<h2 id="objective">Objective</h2>
+<p>Use visualizations to interpret key physical effects of the Lorentz force:</p>
+<ul>
+<li>Circular (Larmor) motion in magnetic fields</li>
+<li>Helical motion in combined electric and magnetic fields</li>
+<li>E×B <strong>drift</strong> in crossed fields</li>
+<li>Annotate <strong>Larmor radius</strong> and <strong>drift velocity</strong></li>
+</ul>
+<hr/>
+<h2 id="key-concepts">Key Concepts</h2>
+<h3 id="larmor-radius">Larmor Radius</h3>
+<p>For a charged particle moving perpendicular to a magnetic field:</p>
+<div class="arithmatex">\[
+r_L = \frac{mv_\perp}{|qB|}
+\]</div>
+<h3 id="drift-velocity-crossed-fields">Drift Velocity (Crossed Fields)</h3>
+<div class="arithmatex">\[
+\mathbf{v}_{\text{drift}} = \frac{\mathbf{E} \times \mathbf{B}}{|\mathbf{B}|^2}
+\]</div>
+<hr/>
+<h2 id="python-setup-reused-function">Python Setup (Reused Function)</h2>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def simulate(E, B, r0, v0, q, m, dt=0.01, steps=1000):
+    r = np.zeros((steps, 3))
+    v = np.zeros((steps, 3))
+    r[0] = r0
+    v[0] = v0
+
+    for i in range(1, steps):
+        F = q * (E + np.cross(v[i-1], B))
+        a = F / m
+        v[i] = v[i-1] + a * dt
+        r[i] = r[i-1] + v[i] * dt
+
+    return r, v
+</code></pre>
+<hr/>
+<h2 id="case-1-2d-circular-motion-larmor-radius">Case 1: 2D Circular Motion (Larmor Radius)</h2>
+<h1 id="parameters">Parameters</h1>
+<p><img alt="alt text" src="../image-11.png"/></p>
+<p><strong>Result</strong>: The particle rotates in a circle with radius ≈ <span class="arithmatex">\(r_L\)</span>. The dashed circle shows the theoretical Larmor radius.</p>
+<hr/>
+<h2 id="case-2-3d-helical-motion-in-mathbfe-parallel-mathbfb">Case 2: 3D Helical Motion in <span class="arithmatex">\(\mathbf{E} \parallel \mathbf{B}\)</span></h2>
+<p><img alt="alt text" src="../image-12.png"/></p>
+<p><strong>Result</strong>: Helical path results from circular motion in <span class="arithmatex">\(xy\)</span>-plane + acceleration in <span class="arithmatex">\(z\)</span>-direction due to <span class="arithmatex">\(\mathbf{E}\)</span>.</p>
+<hr/>
+<h2 id="case-3-eb-drift-crossed-fields">Case 3: E×B Drift (Crossed Fields)</h2>
+<p><img alt="alt text" src="../image-13.png"/></p>
+<p><strong>Result</strong>: The particle’s average motion aligns with the predicted E×B drift velocity.</p>
+<hr/>
+<h2 id="summary-of-physical-effects">Summary of Physical Effects</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Visualization Feature</th>
+<th>Key Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Magnetic only</td>
+<td>Circular path</td>
+<td><strong>Larmor radius</strong></td>
+</tr>
+<tr>
+<td>E and B parallel</td>
+<td>Helix in 3D</td>
+<td><strong>Helical pitch</strong></td>
+</tr>
+<tr>
+<td>Crossed E, B</td>
+<td>Drift superimposed on spiral</td>
+<td><strong>Drift velocity (E×B)</strong></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="optional-enhancements">Optional Enhancements</h2>
+<ul>
+<li>Annotate speed, direction arrows</li>
+<li>Animate trajectories using <code>matplotlib.animation</code> or <code>Plotly</code></li>
+<li>Show field vectors overlaid on plots</li>
+<li>Vary particle charge sign to compare electron vs. proton behavior</li>
+</ul>
+<hr/>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
