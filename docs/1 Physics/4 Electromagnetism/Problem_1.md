@@ -227,3 +227,141 @@ def simulate(E, B, r0, v0):
 
 ---
 
+# 3.
+
+
+* Clear explanations,
+* Python code with variable parameters,
+* Visual plots,
+* Observations for different configurations.
+
+---
+
+#  Task 3: Parameter Exploration in Lorentz Force Simulations
+
+## Goal
+
+We analyze how varying:
+
+* **Electric field** $\mathbf{E}$,
+* **Magnetic field** $\mathbf{B}$,
+* **Initial velocity** $\mathbf{v}_0$,
+* **Charge** $q$,
+* **Mass** $m$,
+
+...affects the motion of a charged particle governed by the **Lorentz force**:
+
+$$
+\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}
+\quad \Rightarrow \quad
+\frac{d\mathbf{v}}{dt} = \frac{q}{m}(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+$$
+
+We simulate and visualize these effects in Python.
+
+---
+
+## 🔧 Generalized Python Code
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def simulate(E, B, r0, v0, q, m, dt=0.01, steps=1000):
+    r = np.zeros((steps, 3))
+    v = np.zeros((steps, 3))
+    r[0] = r0
+    v[0] = v0
+
+    for i in range(1, steps):
+        F = q * (E + np.cross(v[i-1], B))
+        a = F / m
+        v[i] = v[i-1] + a * dt
+        r[i] = r[i-1] + v[i] * dt
+
+    return r
+```
+
+---
+
+##  Exploration 1: Varying Magnetic Field Strength
+
+### Setup:
+
+* $\mathbf{E} = [0, 0, 0]$
+* $\mathbf{v}_0 = [1, 0, 0]$
+* Vary $\mathbf{B} = [0, 0, B_z]$ with $B_z = 0.5, 1.0, 2.0$
+
+
+![alt text](image-8.png)
+
+**Observation**: Stronger $B_z$ results in **tighter circular motion** (smaller radius).
+
+---
+
+##  Exploration 2: Varying Initial Velocity
+
+### Setup:
+
+* $\mathbf{E} = [0, 0, 0]$
+* $\mathbf{B} = [0, 0, 1]$
+* $\mathbf{v}_0 = [v_x, 0, 0]$, with $v_x = 0.5, 1.0, 2.0$
+
+
+![alt text](image-9.png)
+
+**Observation**: Higher $v_x$ gives **larger circular radius** and faster rotation.
+
+---
+
+##  Exploration 3: Varying Particle Mass and Charg
+### Setup:
+
+* $\mathbf{E} = [0, 0, 0]$, $\mathbf{B} = [0, 0, 1]$
+* $\mathbf{v}_0 = [1, 0, 0]$
+* Compare:
+
+  * $q = 1, m = 1$
+  * $q = 1, m = 2$
+  * $q = 2, m = 1$
+
+
+![alt text](image-10.png)
+
+
+ **Observation**:
+
+* Increasing $q$ → tighter circles (stronger Lorentz force)
+* Increasing $m$ → wider circles (more inertia)
+
+---
+
+##  Summary of Effects
+
+| Parameter      | Effect on Trajectory                    |
+| -------------- | --------------------------------------- |
+| $\mathbf{E}$   | Adds acceleration in direction of field |
+| $\mathbf{B}$   | Causes circular or helical motion       |
+| $\mathbf{v}_0$ | Determines radius of curvature          |
+| $q$            | Strengthens the Lorentz force           |
+| $m$            | Increases resistance to motion change   |
+
+---
+
+##  Insights
+
+* The **cyclotron radius** is given by:
+
+$$
+r = \frac{mv}{|q||\mathbf{B}|}
+$$
+
+* Helical motion occurs if $\mathbf{v}_0$ has a component along $\mathbf{B}$.
+* When $\mathbf{E} \perp \mathbf{B}$, particles **drift** with velocity:
+
+$$
+\mathbf{v}_{\text{drift}} = \frac{\mathbf{E} \times \mathbf{B}}{|\mathbf{B}|^2}
+$$
+
+---
+
