@@ -1,103 +1,50 @@
-# PROBLEM 1
+Here's a clean and complete **Markdown document** for **Task 1** involving the simulation of a **single circular wave disturbance** on a water surface. This includes **mathematical formulation**, **Python code**, and **visualization instructions**.
+
+---
+
+#  Circular Wave from a Point Source
+
+##  Problem Description
+
+We model a **single circular water wave** radiating from a point source at location $(x_0, y_0)$. The wave disturbance on the water surface is given by the equation:
+
+$$
+\eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(kr - \omega t + \phi)
+$$
+
+where:
+
+* $\eta(x, y, t)$ is the water surface displacement at point $(x, y)$ and time $t$,
+* $A$ is the wave amplitude,
+* $r = \sqrt{(x - x_0)^2 + (y - y_0)^2}$ is the distance from the source,
+* $k = \frac{2\pi}{\lambda}$ is the wave number,
+* $\omega = 2\pi f$ is the angular frequency,
+* $\phi$ is the initial phase (we'll assume 0 for simplicity).
+
+---
+
+##  Mathematical Components
+
+Let us define:
+
+* **Amplitude**: $A = 1.0$
+* **Wavelength**: $\lambda = 2.0$
+* **Frequency**: $f = 1.0$
+* **Source location**: $(x_0, y_0) = (0, 0)$
+* **Initial Phase**: $\phi = 0$
+
+Then:
+
+$$
+k = \frac{2\pi}{\lambda}, \quad \omega = 2\pi f
+$$
+
+---
+
+## 🐍 Python Simulation
+
+![alt text](image-6.png)
+
+---
 
 
-![alt text](image-5.png)
-
-Explanation of the Code:
-Constants:
-
-Amplitude 
-𝐴
-A, Wavelength 
-𝜆
-λ, Wave number 
-𝑘
-k, Angular frequency 
-𝜔
-ω, and Phase constant 
-𝜙
-ϕ are all set at the beginning.
-
-The source location is set at 
-(
-𝑥
-0
-,
-𝑦
-0
-)
-(x 
-0
-​
- ,y 
-0
-​
- ), and the frequency is 
-𝑓
-=
-1
-f=1 Hz.
-
-Grid Creation:
-
-We create a grid of points on the water surface using np.meshgrid to calculate the displacement 
-𝜂
-(
-𝑥
-,
-𝑦
-,
-𝑡
-)
-η(x,y,t) at each grid point.
-
-Wave Displacement Calculation:
-
-The displacement 
-𝜂
-(
-𝑥
-,
-𝑦
-,
-𝑡
-)
-η(x,y,t) at each point is calculated using the formula:
-
-𝜂
-(
-𝑥
-,
-𝑦
-,
-𝑡
-)
-=
-𝐴
-𝑟
-⋅
-cos
-⁡
-(
-𝑘
-𝑟
-−
-𝜔
-𝑡
-+
-𝜙
-)
-η(x,y,t)= 
-r
-​
- 
-A
-​
- ⋅cos(kr−ωt+ϕ)
-Where 
-𝑟
-r is the distance from the source to each point.
-
-Plotting:
-
-The contour plot visually represents the wave displacement, where the color map indicates the displacement values, with brighter areas corresponding to larger displacements (crests) and darker areas corresponding to smaller displacements (troughs).
