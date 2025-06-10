@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>PROBLEM 1 - Physics and Mathematics</title>
+<title>Problem 1 - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "PROBLEM 1";
+        var mkdocs_page_name = "Problem 1";
         var mkdocs_page_input_path = "1 Physics/3 Waves/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -64,8 +64,14 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">3 Waves</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">PROBLEM 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#problem-description">Problem Description</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mathematical-components">Mathematical Components</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#python-simulation">🐍 Python Simulation</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -163,7 +169,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">3 Waves</li>
-<li class="breadcrumb-item active">PROBLEM 1</li>
+<li class="breadcrumb-item active">Problem 1</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,96 +177,41 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">PROBLEM 1</h1>
-<p><img alt="alt text" src="../image-5.png"/></p>
-<p>Explanation of the Code:
-Constants:</p>
-<p>Amplitude 
-𝐴
-A, Wavelength 
-𝜆
-λ, Wave number 
-𝑘
-k, Angular frequency 
-𝜔
-ω, and Phase constant 
-𝜙
-ϕ are all set at the beginning.</p>
-<p>The source location is set at 
-(
-𝑥
-0
-,
-𝑦
-0
-)
-(x 
-0
-​
- ,y 
-0
-​
- ), and the frequency is 
-𝑓
-=
-1
-f=1 Hz.</p>
-<p>Grid Creation:</p>
-<p>We create a grid of points on the water surface using np.meshgrid to calculate the displacement 
-𝜂
-(
-𝑥
-,
-𝑦
-,
-𝑡
-)
-η(x,y,t) at each grid point.</p>
-<p>Wave Displacement Calculation:</p>
-<p>The displacement 
-𝜂
-(
-𝑥
-,
-𝑦
-,
-𝑡
-)
-η(x,y,t) at each point is calculated using the formula:</p>
-<p>𝜂
-(
-𝑥
-,
-𝑦
-,
-𝑡
-)
-=
-𝐴
-𝑟
-⋅
-cos
-⁡
-(
-𝑘
-𝑟
-−
-𝜔
-𝑡
-+
-𝜙
-)
-η(x,y,t)= 
-r
-​</p>
-<p>A
-​
- ⋅cos(kr−ωt+ϕ)
-Where 
-𝑟
-r is the distance from the source to each point.</p>
-<p>Plotting:</p>
-<p>The contour plot visually represents the wave displacement, where the color map indicates the displacement values, with brighter areas corresponding to larger displacements (crests) and darker areas corresponding to smaller displacements (troughs).</p>
+<p>Here's a clean and complete <strong>Markdown document</strong> for <strong>Task 1</strong> involving the simulation of a <strong>single circular wave disturbance</strong> on a water surface. This includes <strong>mathematical formulation</strong>, <strong>Python code</strong>, and <strong>visualization instructions</strong>.</p>
+<hr/>
+<h1 id="circular-wave-from-a-point-source">Circular Wave from a Point Source</h1>
+<h2 id="problem-description">Problem Description</h2>
+<p>We model a <strong>single circular water wave</strong> radiating from a point source at location <span class="arithmatex">\((x_0, y_0)\)</span>. The wave disturbance on the water surface is given by the equation:</p>
+<div class="arithmatex">\[
+\eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(kr - \omega t + \phi)
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\eta(x, y, t)\)</span> is the water surface displacement at point <span class="arithmatex">\((x, y)\)</span> and time <span class="arithmatex">\(t\)</span>,</li>
+<li><span class="arithmatex">\(A\)</span> is the wave amplitude,</li>
+<li><span class="arithmatex">\(r = \sqrt{(x - x_0)^2 + (y - y_0)^2}\)</span> is the distance from the source,</li>
+<li><span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span> is the wave number,</li>
+<li><span class="arithmatex">\(\omega = 2\pi f\)</span> is the angular frequency,</li>
+<li><span class="arithmatex">\(\phi\)</span> is the initial phase (we'll assume 0 for simplicity).</li>
+</ul>
+<hr/>
+<h2 id="mathematical-components">Mathematical Components</h2>
+<p>Let us define:</p>
+<ul>
+<li><strong>Amplitude</strong>: <span class="arithmatex">\(A = 1.0\)</span></li>
+<li><strong>Wavelength</strong>: <span class="arithmatex">\(\lambda = 2.0\)</span></li>
+<li><strong>Frequency</strong>: <span class="arithmatex">\(f = 1.0\)</span></li>
+<li><strong>Source location</strong>: <span class="arithmatex">\((x_0, y_0) = (0, 0)\)</span></li>
+<li><strong>Initial Phase</strong>: <span class="arithmatex">\(\phi = 0\)</span></li>
+</ul>
+<p>Then:</p>
+<div class="arithmatex">\[
+k = \frac{2\pi}{\lambda}, \quad \omega = 2\pi f
+\]</div>
+<hr/>
+<h2 id="python-simulation">🐍 Python Simulation</h2>
+<p><img alt="alt text" src="../image-6.png"/></p>
+<hr/>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
