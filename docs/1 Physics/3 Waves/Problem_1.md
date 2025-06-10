@@ -4,7 +4,7 @@ Here's a clean and complete **Markdown document** for **Task 1** involving the s
 
 #  Circular Wave from a Point Source
 
-##  Problem Description
+## Problem Description
 
 We model a **single circular water wave** radiating from a point source at location $(x_0, y_0)$. The wave disturbance on the water surface is given by the equation:
 
@@ -41,9 +41,28 @@ $$
 
 ---
 
-## 🐍 Python Simulation
+##  Python Simulation
 
+```
 ![alt text](image-6.png)
+```
+
+---
+
+##  Interpretation of Results
+
+* The result is a **concentric ripple pattern** originating from the source.
+* **Bright bands** (red) indicate **constructive interference** (peak displacement).
+* **Dark bands** (blue) show **destructive interference** (valley).
+* As $r$ increases, amplitude falls off as $1/\sqrt{r}$, mimicking real water wave attenuation.
+
+---
+
+##  Key Takeaways
+
+* **Wavefronts** are circular and equidistant—this is expected from a point source.
+* The **superposition principle** becomes relevant in future tasks with multiple sources.
+* The effect of parameters like $\lambda$, $f$, and $t$ can be observed dynamically by varying values in the code.
 
 ---
 
