@@ -170,10 +170,10 @@ def simulate(E, B, r0, v0):
 * $\mathbf{B} = [0, 0, 1]$
 * $\mathbf{v}_0 = [1, 0, 0]$
 
-```python
+
 # Magnetic field only
 ![alt text](image-5.png)
-```
+
 
  **Observation**: The charged particle undergoes circular motion perpendicular to $\mathbf{B}$.
 
@@ -185,10 +185,10 @@ def simulate(E, B, r0, v0):
 * $\mathbf{B} = [0, 0, 1]$
 * $\mathbf{v}_0 = [1, 0, 0]$
 
-```python
+
 # Parallel E and B fields
 ![alt text](image-6.png)
-```
+
 
  **Observation**: The electric field accelerates the particle along $z$, while the magnetic field causes circular motion in the $xy$-plane → **helical trajectory**.
 
@@ -200,10 +200,9 @@ def simulate(E, B, r0, v0):
 * $\mathbf{B} = [0, 0, 1]$
 * $\mathbf{v}_0 = [0, 0, 0]$
 
-```python
+
 # Crossed E and B fields
 ![alt text](image-7.png)
-```
 
  **Observation**: The particle exhibits **E × B drift** — constant velocity motion perpendicular to both $\mathbf{E}$ and $\mathbf{B}$, typically along the $y$-direction.
 
