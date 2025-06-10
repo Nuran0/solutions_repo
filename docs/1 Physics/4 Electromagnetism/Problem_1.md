@@ -365,3 +365,112 @@ $$
 
 ---
 
+# 4.
+
+---
+
+#  Task 4: Visualizing Charged Particle Motion under Lorentz Force
+
+##  Objective
+
+Use visualizations to interpret key physical effects of the Lorentz force:
+
+* Circular (Larmor) motion in magnetic fields
+* Helical motion in combined electric and magnetic fields
+* E×B **drift** in crossed fields
+* Annotate **Larmor radius** and **drift velocity**
+
+---
+
+##  Key Concepts
+
+###  Larmor Radius
+
+For a charged particle moving perpendicular to a magnetic field:
+
+$$
+r_L = \frac{mv_\perp}{|qB|}
+$$
+
+###  Drift Velocity (Crossed Fields)
+
+$$
+\mathbf{v}_{\text{drift}} = \frac{\mathbf{E} \times \mathbf{B}}{|\mathbf{B}|^2}
+$$
+
+---
+
+## Python Setup (Reused Function)
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def simulate(E, B, r0, v0, q, m, dt=0.01, steps=1000):
+    r = np.zeros((steps, 3))
+    v = np.zeros((steps, 3))
+    r[0] = r0
+    v[0] = v0
+
+    for i in range(1, steps):
+        F = q * (E + np.cross(v[i-1], B))
+        a = F / m
+        v[i] = v[i-1] + a * dt
+        r[i] = r[i-1] + v[i] * dt
+
+    return r, v
+```
+
+---
+
+##  Case 1: 2D Circular Motion (Larmor Radius)
+
+
+# Parameters
+![alt text](image-11.png)
+
+
+ **Result**: The particle rotates in a circle with radius ≈ $r_L$. The dashed circle shows the theoretical Larmor radius.
+
+---
+
+##  Case 2: 3D Helical Motion in $\mathbf{E} \parallel \mathbf{B}$
+
+![alt text](image-12.png)
+
+
+ **Result**: Helical path results from circular motion in $xy$-plane + acceleration in $z$-direction due to $\mathbf{E}$.
+
+---
+
+##  Case 3: E×B Drift (Crossed Fields)
+
+
+![alt text](image-13.png)
+
+
+ **Result**: The particle’s average motion aligns with the predicted E×B drift velocity.
+
+---
+
+##  Summary of Physical Effects
+
+| Scenario         | Visualization Feature        | Key Quantity             |
+| ---------------- | ---------------------------- | ------------------------ |
+| Magnetic only    | Circular path                | **Larmor radius**        |
+| E and B parallel | Helix in 3D                  | **Helical pitch**        |
+| Crossed E, B     | Drift superimposed on spiral | **Drift velocity (E×B)** |
+
+---
+
+##  Optional Enhancements
+
+* Annotate speed, direction arrows
+* Animate trajectories using `matplotlib.animation` or `Plotly`
+* Show field vectors overlaid on plots
+* Vary particle charge sign to compare electron vs. proton behavior
+
+---
+
+
