@@ -100,3 +100,131 @@ $$
 
 ---
 
+# 2.
+
+
+---
+
+#  Simulating Charged Particle Motion Under Lorentz Force
+
+## Lorentz Force Equation
+
+$$
+\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}
+$$
+
+$$
+\Rightarrow \frac{d\mathbf{v}}{dt} = \frac{q}{m} \left(\mathbf{E} + \mathbf{v} \times \mathbf{B}\right)
+$$
+
+This governs the dynamics of a charged particle in electric and magnetic fields. We'll solve this using numerical integration (Euler method for simplicity).
+
+---
+
+##  Assumptions and Initial Setup
+
+* Charge $q = 1$
+* Mass $m = 1$
+* Initial position: $\mathbf{r}_0 = [0, 0, 0]$
+* Initial velocity: user-defined per case
+* Time step: $\Delta t = 0.01$
+* Total time: 1000 steps
+
+---
+
+##  Python Code: General Simulator
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Constants
+q = 1.0  # Charge
+m = 1.0  # Mass
+dt = 0.01
+steps = 1000
+
+def lorentz_force(E, B, v):
+    return q * (E + np.cross(v, B))
+
+def simulate(E, B, r0, v0):
+    r = np.zeros((steps, 3))
+    v = np.zeros((steps, 3))
+    r[0] = r0
+    v[0] = v0
+
+    for i in range(1, steps):
+        a = lorentz_force(E, B, v[i-1]) / m
+        v[i] = v[i-1] + a * dt
+        r[i] = r[i-1] + v[i] * dt
+
+    return r
+```
+
+---
+
+## 🌀 Case 1: **Uniform Magnetic Field Only**
+
+* $\mathbf{E} = [0, 0, 0]$
+* $\mathbf{B} = [0, 0, 1]$
+* $\mathbf{v}_0 = [1, 0, 0]$
+
+```python
+# Magnetic field only
+![alt text](image-5.png)
+```
+
+ **Observation**: The charged particle undergoes circular motion perpendicular to $\mathbf{B}$.
+
+---
+
+##  Case 2: **Uniform Electric and Magnetic Fields**
+
+* $\mathbf{E} = [0, 0, 1]$
+* $\mathbf{B} = [0, 0, 1]$
+* $\mathbf{v}_0 = [1, 0, 0]$
+
+```python
+# Parallel E and B fields
+![alt text](image-6.png)
+```
+
+ **Observation**: The electric field accelerates the particle along $z$, while the magnetic field causes circular motion in the $xy$-plane → **helical trajectory**.
+
+---
+
+##  Case 3: **Crossed Fields (E ⊥ B)**
+
+* $\mathbf{E} = [1, 0, 0]$
+* $\mathbf{B} = [0, 0, 1]$
+* $\mathbf{v}_0 = [0, 0, 0]$
+
+```python
+# Crossed E and B fields
+![alt text](image-7.png)
+```
+
+ **Observation**: The particle exhibits **E × B drift** — constant velocity motion perpendicular to both $\mathbf{E}$ and $\mathbf{B}$, typically along the $y$-direction.
+
+---
+
+##  Practical Implications
+
+| Scenario        | System Example                 | Lorentz Force Role                         |
+| --------------- | ------------------------------ | ------------------------------------------ |
+| Circular motion | Cyclotron                      | Circular acceleration of charged particles |
+| Helical motion  | Magnetic mirrors, tokamaks     | Plasma confinement, fusion research        |
+| E × B drift     | Velocity selector, Hall effect | Particle filtering, current generation     |
+
+---
+
+##  Extensions & Ideas
+
+* Simulate **non-uniform magnetic fields** ($\nabla \cdot \mathbf{B} \neq 0$)
+* Use **Runge-Kutta** methods for better accuracy
+* Track **energy conservation**
+* Add **collisions or frictional forces** to model realistic systems
+
+---
+
