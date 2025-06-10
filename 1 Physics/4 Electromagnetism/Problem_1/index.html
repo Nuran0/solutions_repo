@@ -286,6 +286,125 @@ r = \frac{mv}{qB}
 <li>Mastery of this principle enables technologies from particle physics to medical diagnostics.</li>
 </ul>
 <hr/>
+<h1 id="2">2.</h1>
+<hr/>
+<h1 id="simulating-charged-particle-motion-under-lorentz-force">Simulating Charged Particle Motion Under Lorentz Force</h1>
+<h2 id="lorentz-force-equation">Lorentz Force Equation</h2>
+<div class="arithmatex">\[
+\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow \frac{d\mathbf{v}}{dt} = \frac{q}{m} \left(\mathbf{E} + \mathbf{v} \times \mathbf{B}\right)
+\]</div>
+<p>This governs the dynamics of a charged particle in electric and magnetic fields. We'll solve this using numerical integration (Euler method for simplicity).</p>
+<hr/>
+<h2 id="assumptions-and-initial-setup">Assumptions and Initial Setup</h2>
+<ul>
+<li>Charge <span class="arithmatex">\(q = 1\)</span></li>
+<li>Mass <span class="arithmatex">\(m = 1\)</span></li>
+<li>Initial position: <span class="arithmatex">\(\mathbf{r}_0 = [0, 0, 0]\)</span></li>
+<li>Initial velocity: user-defined per case</li>
+<li>Time step: <span class="arithmatex">\(\Delta t = 0.01\)</span></li>
+<li>Total time: 1000 steps</li>
+</ul>
+<hr/>
+<h2 id="python-code-general-simulator">Python Code: General Simulator</h2>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Constants
+q = 1.0  # Charge
+m = 1.0  # Mass
+dt = 0.01
+steps = 1000
+
+def lorentz_force(E, B, v):
+    return q * (E + np.cross(v, B))
+
+def simulate(E, B, r0, v0):
+    r = np.zeros((steps, 3))
+    v = np.zeros((steps, 3))
+    r[0] = r0
+    v[0] = v0
+
+    for i in range(1, steps):
+        a = lorentz_force(E, B, v[i-1]) / m
+        v[i] = v[i-1] + a * dt
+        r[i] = r[i-1] + v[i] * dt
+
+    return r
+</code></pre>
+<hr/>
+<h2 id="case-1-uniform-magnetic-field-only">🌀 Case 1: <strong>Uniform Magnetic Field Only</strong></h2>
+<ul>
+<li><span class="arithmatex">\(\mathbf{E} = [0, 0, 0]\)</span></li>
+<li><span class="arithmatex">\(\mathbf{B} = [0, 0, 1]\)</span></li>
+<li><span class="arithmatex">\(\mathbf{v}_0 = [1, 0, 0]\)</span></li>
+</ul>
+<pre><code class="language-python"># Magnetic field only
+![alt text](image-5.png)
+</code></pre>
+<p><strong>Observation</strong>: The charged particle undergoes circular motion perpendicular to <span class="arithmatex">\(\mathbf{B}\)</span>.</p>
+<hr/>
+<h2 id="case-2-uniform-electric-and-magnetic-fields">Case 2: <strong>Uniform Electric and Magnetic Fields</strong></h2>
+<ul>
+<li><span class="arithmatex">\(\mathbf{E} = [0, 0, 1]\)</span></li>
+<li><span class="arithmatex">\(\mathbf{B} = [0, 0, 1]\)</span></li>
+<li><span class="arithmatex">\(\mathbf{v}_0 = [1, 0, 0]\)</span></li>
+</ul>
+<pre><code class="language-python"># Parallel E and B fields
+![alt text](image-6.png)
+</code></pre>
+<p><strong>Observation</strong>: The electric field accelerates the particle along <span class="arithmatex">\(z\)</span>, while the magnetic field causes circular motion in the <span class="arithmatex">\(xy\)</span>-plane → <strong>helical trajectory</strong>.</p>
+<hr/>
+<h2 id="case-3-crossed-fields-e-b">Case 3: <strong>Crossed Fields (E ⊥ B)</strong></h2>
+<ul>
+<li><span class="arithmatex">\(\mathbf{E} = [1, 0, 0]\)</span></li>
+<li><span class="arithmatex">\(\mathbf{B} = [0, 0, 1]\)</span></li>
+<li><span class="arithmatex">\(\mathbf{v}_0 = [0, 0, 0]\)</span></li>
+</ul>
+<pre><code class="language-python"># Crossed E and B fields
+![alt text](image-7.png)
+</code></pre>
+<p><strong>Observation</strong>: The particle exhibits <strong>E × B drift</strong> — constant velocity motion perpendicular to both <span class="arithmatex">\(\mathbf{E}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span>, typically along the <span class="arithmatex">\(y\)</span>-direction.</p>
+<hr/>
+<h2 id="practical-implications">Practical Implications</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>System Example</th>
+<th>Lorentz Force Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Circular motion</td>
+<td>Cyclotron</td>
+<td>Circular acceleration of charged particles</td>
+</tr>
+<tr>
+<td>Helical motion</td>
+<td>Magnetic mirrors, tokamaks</td>
+<td>Plasma confinement, fusion research</td>
+</tr>
+<tr>
+<td>E × B drift</td>
+<td>Velocity selector, Hall effect</td>
+<td>Particle filtering, current generation</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="extensions-ideas">Extensions &amp; Ideas</h2>
+<ul>
+<li>Simulate <strong>non-uniform magnetic fields</strong> (<span class="arithmatex">\(\nabla \cdot \mathbf{B} \neq 0\)</span>)</li>
+<li>Use <strong>Runge-Kutta</strong> methods for better accuracy</li>
+<li>Track <strong>energy conservation</strong></li>
+<li>Add <strong>collisions or frictional forces</strong> to model realistic systems</li>
+</ul>
+<hr/>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
