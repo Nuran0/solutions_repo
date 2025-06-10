@@ -72,6 +72,26 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#the-lorentz-force-law">The Lorentz Force Law</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#real-world-applications-of-the-lorentz-force">Real-World Applications of the Lorentz Force</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#1-particle-accelerators">1. Particle Accelerators</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#2-mass-spectrometers">2. Mass Spectrometers</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#3-plasma-confinement-in-fusion-reactors">3. Plasma Confinement in Fusion Reactors</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#4-auroras-and-space-physics">4. Auroras and Space Physics</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#5-cathode-ray-tubes-crts">5. Cathode Ray Tubes (CRTs)</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#the-role-of-mathbfe-and-mathbfb-in-particle-motion">The Role of \(\mathbf{E}\) and \(\mathbf{B}\) in Particle Motion</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -171,160 +191,101 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
-<h1 id="formulas-related-to-lorentz-force-and-applications">Formulas Related to Lorentz Force and Applications</h1>
-<h2 id="1-lorentz-force-equation">1. Lorentz Force Equation</h2>
-<p>The Lorentz force equation describes the force experienced by a charged particle moving in an electric and magnetic field.</p>
+<p>Here’s the full <strong>Markdown-formatted response</strong> for <strong>Electromagnetism – Task 1: Exploration of Applications of the Lorentz Force</strong>, including equations and real-world context.</p>
+<hr/>
+<h1 id="lorentz-force-applications-and-field-effects">Lorentz Force: Applications and Field Effects</h1>
+<h2 id="the-lorentz-force-law">The Lorentz Force Law</h2>
+<p>The motion of a charged particle in electric and magnetic fields is governed by the <strong>Lorentz force</strong>:</p>
 <div class="arithmatex">\[
-\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})
+\mathbf{F} = q\mathbf{E} + q\mathbf{v} \times \mathbf{B}
 \]</div>
-<p>Where:
-- <span class="arithmatex">\(q\)</span> is the charge of the particle,
-- <span class="arithmatex">\(\mathbf{E}\)</span> is the electric field,
-- <span class="arithmatex">\(\mathbf{B}\)</span> is the magnetic field,
-- <span class="arithmatex">\(\mathbf{v}\)</span> is the velocity of the particle.</p>
-<h2 id="2-velocity-of-a-charged-particle-in-a-uniform-magnetic-field">2. Velocity of a Charged Particle in a Uniform Magnetic Field</h2>
-<p>When a charged particle moves perpendicular to a magnetic field, it undergoes circular motion. The radius of the circular path is given by:</p>
-<div class="arithmatex">\[
-r = \frac{mv}{qB}
-\]</div>
-<p>Where:
-- <span class="arithmatex">\(m\)</span> is the mass of the particle,
-- <span class="arithmatex">\(v\)</span> is the velocity of the particle,
-- <span class="arithmatex">\(q\)</span> is the charge of the particle,
-- <span class="arithmatex">\(B\)</span> is the magnetic field strength.</p>
-<h2 id="3-cyclotron-frequency-angular-frequency">3. Cyclotron Frequency (Angular Frequency)</h2>
-<p>In a cyclotron, charged particles move in a circular trajectory due to the magnetic field. The angular frequency of this motion is given by:</p>
-<div class="arithmatex">\[
-\omega = \frac{qB}{m}
-\]</div>
-<p>Where:
-- <span class="arithmatex">\(\omega\)</span> is the angular frequency (in radians per second),
-- <span class="arithmatex">\(q\)</span> is the charge of the particle,
-- <span class="arithmatex">\(B\)</span> is the magnetic field strength,
-- <span class="arithmatex">\(m\)</span> is the mass of the particle.</p>
-<p>The frequency of the circular motion (in Hz) is:</p>
-<div class="arithmatex">\[
-f = \frac{\omega}{2\pi} = \frac{qB}{2\pi m}
-\]</div>
-<h2 id="4-mass-spectrometer-formula">4. Mass Spectrometer Formula</h2>
-<p>In a mass spectrometer, the radius of the path taken by the charged particle in a magnetic field is used to determine its mass-to-charge ratio. The formula is:</p>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{F}\)</span> is the total force on a particle,</li>
+<li><span class="arithmatex">\(q\)</span> is the electric charge,</li>
+<li><span class="arithmatex">\(\mathbf{E}\)</span> is the electric field,</li>
+<li><span class="arithmatex">\(\mathbf{v}\)</span> is the velocity of the particle,</li>
+<li><span class="arithmatex">\(\mathbf{B}\)</span> is the magnetic field.</li>
+</ul>
+<hr/>
+<h2 id="real-world-applications-of-the-lorentz-force">Real-World Applications of the Lorentz Force</h2>
+<h3 id="1-particle-accelerators">1. <strong>Particle Accelerators</strong></h3>
+<h4 id="example-linear-accelerators-linacs-cyclotrons-synchrotrons">Example: Linear Accelerators (LINACs), Cyclotrons, Synchrotrons</h4>
+<ul>
+<li><strong>Magnetic Fields</strong>: Bend particle trajectories into circular or spiral paths (centripetal force via <span class="arithmatex">\(\mathbf{v} \times \mathbf{B}\)</span>).</li>
+<li><strong>Electric Fields</strong>: Accelerate particles linearly between electrodes or cavities.</li>
+</ul>
+<p><strong>Lorentz Force Role</strong>: Precise control of beam paths and energies for high-energy physics experiments or cancer radiation therapy.</p>
+<hr/>
+<h3 id="2-mass-spectrometers">2. <strong>Mass Spectrometers</strong></h3>
+<ul>
+<li>Used to measure <strong>mass-to-charge ratios</strong> of ions.</li>
+<li>A charged particle enters a known magnetic field region and follows a circular path.</li>
+</ul>
 <div class="arithmatex">\[
 r = \frac{mv}{qB}
+\Rightarrow
+\frac{m}{q} = \frac{rB}{v}
 \]</div>
-<p>Where:
-- <span class="arithmatex">\(r\)</span> is the radius of the circular path,
-- <span class="arithmatex">\(m\)</span> is the mass of the particle,
-- <span class="arithmatex">\(v\)</span> is the velocity of the particle,
-- <span class="arithmatex">\(q\)</span> is the charge of the particle,
-- <span class="arithmatex">\(B\)</span> is the magnetic field strength.</p>
-<p>By measuring <span class="arithmatex">\(r\)</span> and knowing <span class="arithmatex">\(v\)</span> and <span class="arithmatex">\(B\)</span>, we can solve for the mass-to-charge ratio (<span class="arithmatex">\(\frac{m}{q}\)</span>).</p>
-<h2 id="5-force-on-a-moving-charge-in-a-uniform-electric-field">5. Force on a Moving Charge in a Uniform Electric Field</h2>
-<p>The force on a charged particle moving in an electric field is given by:</p>
-<div class="arithmatex">\[
-\mathbf{F} = q\mathbf{E}
-\]</div>
-<p>Where:
-- <span class="arithmatex">\(\mathbf{F}\)</span> is the force,
-- <span class="arithmatex">\(q\)</span> is the charge of the particle,
-- <span class="arithmatex">\(\mathbf{E}\)</span> is the electric field.</p>
-<h2 id="6-kinetic-energy-of-a-particle-accelerated-by-an-electric-field">6. Kinetic Energy of a Particle Accelerated by an Electric Field</h2>
-<p>If a charged particle is accelerated by an electric field, the kinetic energy gained is given by:</p>
-<div class="arithmatex">\[
-K.E. = qV
-\]</div>
-<p>Where:
-- <span class="arithmatex">\(K.E.\)</span> is the kinetic energy,
-- <span class="arithmatex">\(q\)</span> is the charge of the particle,
-- <span class="arithmatex">\(V\)</span> is the potential difference the particle is accelerated through.</p>
-<h2 id="7-motion-of-a-particle-in-crossed-electric-and-magnetic-fields">7. Motion of a Particle in Crossed Electric and Magnetic Fields</h2>
-<p>When both electric and magnetic fields are applied simultaneously, the particle’s trajectory can be affected by both forces. The general form of the motion equation is:</p>
-<div class="arithmatex">\[
-q(\mathbf{E} + \mathbf{v} \times \mathbf{B}) = m\frac{d\mathbf{v}}{dt}
-\]</div>
-<p>This equation can be solved using numerical methods (like Euler's method or Runge-Kutta) to find the particle's trajectory over time.</p>
-<h2 id="8-electric-force-due-to-a-uniform-field">8. Electric Force Due to a Uniform Field</h2>
-<p>For a uniformly distributed electric field, the electric force on a particle is:</p>
-<div class="arithmatex">\[
-\mathbf{F}_E = q\mathbf{E}
-\]</div>
-<p>Where:
-- <span class="arithmatex">\(\mathbf{F}_E\)</span> is the electric force,
-- <span class="arithmatex">\(q\)</span> is the charge,
-- <span class="arithmatex">\(\mathbf{E}\)</span> is the electric field.</p>
-<h2 id="9-magnetic-force-on-a-charged-particle">9. Magnetic Force on a Charged Particle</h2>
-<p>The magnetic force on a moving charged particle is given by:</p>
-<div class="arithmatex">\[
-\mathbf{F}_B = q(\mathbf{v} \times \mathbf{B})
-\]</div>
-<p>Where:
-- <span class="arithmatex">\(\mathbf{F}_B\)</span> is the magnetic force,
-- <span class="arithmatex">\(\mathbf{v}\)</span> is the velocity of the particle,
-- <span class="arithmatex">\(\mathbf{B}\)</span> is the magnetic field.</p>
-<h2 id="10-lorentz-force-in-terms-of-energy">10. Lorentz Force in Terms of Energy</h2>
-<p>The total energy of a charged particle in a magnetic field is a sum of its kinetic energy and the work done by electric fields:</p>
-<div class="arithmatex">\[
-E_{\text{total}} = K.E. + \text{Work done by } \mathbf{E}
-\]</div>
-<p>Where the kinetic energy <span class="arithmatex">\(K.E.\)</span> is:</p>
-<div class="arithmatex">\[
-K.E. = \frac{1}{2} mv^2
-\]</div>
-<h1 id="2-simulating-particle-motion">2. Simulating Particle Motion</h1>
-<h2 id="objective">Objective</h2>
-<p>Implement a simulation to compute and visualize the trajectory of a charged particle under various field conditions. Specifically, we will simulate:</p>
-<ol>
-<li><strong>Uniform Magnetic Field</strong>: The particle will undergo circular motion due to the Lorentz force from the magnetic field.</li>
-<li><strong>Combined Uniform Electric and Magnetic Fields</strong>: The particle will experience both forces simultaneously, resulting in helical or drift motion.</li>
-<li><strong>Crossed Electric and Magnetic Fields</strong>: In this configuration, the particle will experience complex motion due to the perpendicular electric and magnetic fields.</li>
-</ol>
-<p>The simulation will visualize the trajectory of the particle based on its initial conditions and the field configurations.</p>
-<h2 id="simulation-implementation">Simulation Implementation</h2>
-<h3 id="1-uniform-magnetic-field">1. Uniform Magnetic Field</h3>
-<p>In a uniform magnetic field, a charged particle will experience a force perpendicular to its velocity, causing it to move in a circular path. The radius of the circular path is determined by:</p>
-<div class="arithmatex">\[
-r = \frac{mv}{qB}
-\]</div>
-<p>Where:
-- <span class="arithmatex">\(m\)</span> is the mass of the particle,
-- <span class="arithmatex">\(v\)</span> is the velocity of the particle,
-- <span class="arithmatex">\(q\)</span> is the charge of the particle,
-- <span class="arithmatex">\(B\)</span> is the magnetic field strength.</p>
-<p>Use the Euler or Runge-Kutta method to solve the equations of motion for the particle in the magnetic field.</p>
-<h3 id="2-combined-uniform-electric-and-magnetic-fields">2. Combined Uniform Electric and Magnetic Fields</h3>
-<p>When both electric and magnetic fields are applied, the Lorentz force is the sum of the forces from each field:</p>
-<div class="arithmatex">\[
-\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})
-\]</div>
-<p>This configuration results in helical motion, where the particle spirals along the magnetic field lines due to the electric field. The motion can be described as:</p>
-<div class="arithmatex">\[
-\mathbf{r}(t) = \mathbf{r_0} + \mathbf{v_0}t + \frac{q}{m} \int (\mathbf{E} + \mathbf{v} \times \mathbf{B}) dt
-\]</div>
-<h3 id="3-crossed-electric-and-magnetic-fields">3. Crossed Electric and Magnetic Fields</h3>
-<p>When the electric and magnetic fields are crossed (i.e., perpendicular), the particle will experience a drift velocity in addition to its circular motion. The resulting trajectory is a combination of drift motion and circular motion. The drift velocity is given by:</p>
-<div class="arithmatex">\[
-\mathbf{v_{\text{drift}}} = \frac{\mathbf{E} \times \mathbf{B}}{B^2}
-\]</div>
-<p><img alt="alt text" src="../image-1.png"/></p>
-<p><img alt="alt text" src="../image.png"/></p>
-<h1 id="3-parameter-exploration">3. Parameter Exploration</h1>
-<h2 id="objective_1">Objective</h2>
-<p>In this task, we will explore how varying the following parameters affects the trajectory of a charged particle under the influence of electric and magnetic fields:</p>
-<ol>
-<li><strong>Field Strengths (<span class="arithmatex">\(\mathbf{E}\)</span>, <span class="arithmatex">\(\mathbf{B}\)</span>)</strong>: Vary the magnitudes of the electric and magnetic fields to see how they affect the motion of the particle.</li>
-<li><strong>Initial Particle Velocity (<span class="arithmatex">\(\mathbf{v}\)</span>)</strong>: Change the initial velocity of the particle and observe how different velocities influence the motion.</li>
-<li><strong>Charge and Mass of the Particle (<span class="arithmatex">\(q\)</span>, <span class="arithmatex">\(m\)</span>)</strong>: Vary the charge and mass of the particle to explore how these properties affect the particle's trajectory.</li>
-</ol>
-<p><img alt="alt text" src="../image-2.png"/></p>
-<h1 id="4-visualization">4. Visualization</h1>
-<h2 id="objective_2">Objective</h2>
-<p>In this task, we will create clear and labeled plots to visualize the trajectory of a charged particle under the influence of electric and magnetic fields. We will show:</p>
-<ol>
-<li><strong>2D and 3D plots</strong> of the particle's path in different scenarios.</li>
-<li><strong>Physical phenomena</strong> like the <strong>Larmor radius</strong> (the radius of the circular motion of the particle in a magnetic field) and <strong>drift velocity</strong> (the velocity component due to crossed electric and magnetic fields).</li>
-</ol>
-<p><img alt="alt text" src="../image-3.png"/></p>
-<p><img alt="alt text" src="../image-4.png"/></p>
+<ul>
+<li><strong>Electric Fields</strong>: Initially accelerate the particles.</li>
+<li><strong>Magnetic Fields</strong>: Separate ions by deflection radius.</li>
+</ul>
+<p><strong>Lorentz Force Role</strong>: Enables measurement of molecular masses and chemical identification.</p>
+<hr/>
+<h3 id="3-plasma-confinement-in-fusion-reactors">3. <strong>Plasma Confinement in Fusion Reactors</strong></h3>
+<h4 id="example-tokamaks-and-stellarators">Example: Tokamaks and Stellarators</h4>
+<ul>
+<li>Plasmas consist of <strong>ionized gases</strong> with free electrons and ions.</li>
+<li>Strong magnetic fields confine and stabilize plasma motion using <strong>helical paths</strong>.</li>
+</ul>
+<p><strong>Lorentz Force Role</strong>: Maintains confinement by continuously forcing the charged particles to spiral, reducing loss to reactor walls.</p>
+<hr/>
+<h3 id="4-auroras-and-space-physics">4. <strong>Auroras and Space Physics</strong></h3>
+<ul>
+<li>Solar wind (charged particles) interacts with Earth’s magnetic field.</li>
+<li>Particles spiral along field lines toward poles, collide with atmospheric molecules → <strong>aurora borealis/australis</strong>.</li>
+</ul>
+<p><strong>Lorentz Force Role</strong>: Determines particle trajectories in Earth's magnetosphere.</p>
+<hr/>
+<h3 id="5-cathode-ray-tubes-crts">5. <strong>Cathode Ray Tubes (CRTs)</strong></h3>
+<ul>
+<li>Electrons accelerated by electric fields and steered by magnetic fields.</li>
+<li>Found in old TVs and oscilloscopes.</li>
+</ul>
+<p><strong>Lorentz Force Role</strong>: Directs beam to desired screen location for image creation.</p>
+<hr/>
+<h2 id="the-role-of-mathbfe-and-mathbfb-in-particle-motion">The Role of <span class="arithmatex">\(\mathbf{E}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span> in Particle Motion</h2>
+<table>
+<thead>
+<tr>
+<th>Field Type</th>
+<th>Effect on Charged Particles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Electric Field <span class="arithmatex">\(\mathbf{E}\)</span></strong></td>
+<td>Accelerates particles along the field direction. Linear force: <span class="arithmatex">\(\mathbf{F}_E = q\mathbf{E}\)</span>.</td>
+</tr>
+<tr>
+<td><strong>Magnetic Field <span class="arithmatex">\(\mathbf{B}\)</span></strong></td>
+<td>Deflects moving particles in circular or helical paths. Perpendicular force: <span class="arithmatex">\(\mathbf{F}_B = q\mathbf{v} \times \mathbf{B}\)</span>.</td>
+</tr>
+<tr>
+<td><strong>Crossed Fields <span class="arithmatex">\(\mathbf{E} \perp \mathbf{B}\)</span></strong></td>
+<td>Produces <strong>cycloidal</strong> motion or <strong>E×B drift</strong>, used in devices like velocity selectors.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>The <strong>Lorentz force</strong> is fundamental in controlling and manipulating the motion of charged particles.</li>
+<li>Both <strong><span class="arithmatex">\(\mathbf{E}\)</span></strong> and <strong><span class="arithmatex">\(\mathbf{B}\)</span></strong> fields have distinct yet complementary roles: acceleration vs. redirection.</li>
+<li>Mastery of this principle enables technologies from particle physics to medical diagnostics.</li>
+</ul>
+<hr/>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
